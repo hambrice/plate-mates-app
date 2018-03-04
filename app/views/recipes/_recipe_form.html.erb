@@ -1,0 +1,21 @@
+<%= form_for @recipe do |t| %>
+<%= t.label :name %>
+<%= t.text_field :name %><br><br>
+<%= t.label "Category" %><br><br>
+<% @categories.each do |category| %>
+<%= t.label category %>
+<%= t.radio_button(:category, category) %>
+<% end %><br><br>
+<%= t.fields_for :ingredients do |f| %>
+<%= f.label "Ingredient" %>
+  <%= f.text_field :name %>
+  <%= f.label "Amount" %>
+  <%= f.text_field :quantity %><br>
+  <% end %><br><br>
+<%= t.label "Prep Time(in minutes)" %>
+<%= t.number_field :prep_time %>
+<%= t.label "Cook Time(in minutes)" %>
+<%= t.number_field :cook_time %><br><br>
+<%= t.text_area :instructions %><br>
+<%= t.submit %>
+<% end %>

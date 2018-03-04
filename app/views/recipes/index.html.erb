@@ -1,0 +1,4 @@
+<% @recipes.each do |recipe| %>
+<h2><%= link_to recipe.name, recipe_path(recipe) %> </h2>
+<%= render partial: 'recipe_details', locals: {recipe: recipe} %>
+<% end %>
