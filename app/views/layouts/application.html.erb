@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <img src="<%= current_user.image %>">
+    Welcome, <%= current_user.first_name %>!
+    <%= link_to "Home", user_path(current_user) %>
+    <%= link_to "Browse recipes", recipes_path %>
+    <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %>
+    <%= link_to 'Edit Profile',edit_user_registration_path %>
+    <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+
     <%= yield %>
   </body>
 </html>
