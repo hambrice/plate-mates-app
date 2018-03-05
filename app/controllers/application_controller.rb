@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.origin'] || root_path
   end
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :require_login
 
   private
 
@@ -14,7 +13,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys:[:image, :first_name, :last_name, :email, :password, :current_password])
   end
 
-  def require_login
-    return head(:forbidden) unless session.include? :user_id
-  end
+
 end

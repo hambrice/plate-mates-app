@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
 
-  before_action :require_login
-  skip_before_action :require_login, only: [:show, :index]
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -61,5 +60,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :category, :prep_time, :cook_time, :instructions, ingredients_attributes:[:name, :quantity])
+  end
+
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
   end
 end
