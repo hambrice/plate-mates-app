@@ -48,14 +48,18 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     authorize(@recipe)
-    @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe)
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @recipe = Recipe.find(params[:id])
     authorize(@recipe)
     @recipe.destroy
+    flash[:alert] = "Your recipe has been deleted."
     redirect_to recipes_path
   end
 
@@ -66,6 +70,6 @@ class RecipesController < ApplicationController
   end
 
   def require_login
-    return head(:forbidden) unless session.include? :user_id
+    return head(:forbidden) unless current_user
   end
 end

@@ -17,6 +17,9 @@
       <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %>
       <%= link_to 'Edit Profile',edit_user_registration_path %>
       <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+    <% end %><br><br>
+    <% if flash[:alert] %>
+    <strong><%= flash[:alert] %></strong><br><br>
     <% end %>
     <%= yield %>
   </body>
