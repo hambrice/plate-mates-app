@@ -7,7 +7,7 @@ class SiteController < ApplicationController
 
   def home
     @user = current_user
-    @recipes = Recipe.first[3]
+    @recipes = Recipe.first(3)
   end
 
   def show

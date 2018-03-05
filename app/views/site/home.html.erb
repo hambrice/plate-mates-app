@@ -3,5 +3,5 @@
 <h4>Welcome, <%= @user.first_name %>! </h4>
 <%= link_to "user page", user_path(@user) %>
 <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-
+<%= link_to 'Edit Profile',edit_user_registration_path %>
 <h2> Recommended Recipes </h2>
