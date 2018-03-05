@@ -1,6 +1,8 @@
 <img src="<%= @user.image %>"><br>
-<h4>Welcome, <%= @user.first_name %>! </h4>
+<h3>Welcome, <%= @user.first_name %>! </h3>
 <%= link_to "user page", user_path(@user) %>
 <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-<%= link_to 'Edit Profile',edit_user_registration_path %>
+<%= link_to 'Edit Profile',edit_user_registration_path %> <br>
+<h5><%= link_to "Browse recipes", recipe_path %> </h5>
+<h5> <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %> </h5>
 <h2> Recommended Recipes </h2>
