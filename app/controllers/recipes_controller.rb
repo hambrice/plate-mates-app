@@ -5,9 +5,13 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @categories = ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
+    if params[:query] != nil
+      @recipes = Recipe.all.select {|s| s.name.downcase.include?(params[:query].downcase)}
+    else
+    #@categories = ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
 
     @recipes = Recipe.all
+    end
   end
 
   def new

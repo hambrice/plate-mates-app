@@ -1,4 +1,9 @@
-<% @recipes.each do |recipe| %>
-<h2><%= link_to recipe.name, recipe_path(recipe) %> </h2>
-<%= render partial: 'recipe_details', locals: {recipe: recipe} %>
+<%= form_tag recipes_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
 <% end %>
+
+
+<%= render partial: 'recipe_summary', collection: @recipes, as: :recipe %>
