@@ -10,13 +10,15 @@
 
   <body>
     <% if current_user %>
-      <img src="<%= current_user.image %>">
-      Welcome, <%= current_user.first_name %>!
-      <%= link_to "Home", user_path(current_user) %>
+    <div align = "right">  <img src="<%= current_user.image %>">
+       <details>
+         <summary><strong><%= current_user.name %> </summary>
+      <%= link_to "Home", root_path %>
       <%= link_to "Browse recipes", recipes_path %>
       <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %>
       <%= link_to 'Edit Profile',edit_user_registration_path %>
       <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+    </details></div>
     <% end %><br><br>
     <% if flash[:alert] %>
     <strong><%= flash[:alert] %></strong><br><br>
