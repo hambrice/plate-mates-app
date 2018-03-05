@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180301021909) do
 
   create_table "recipes", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.string "instructions"
     t.integer "prep_time"
     t.integer "cook_time"
@@ -38,8 +39,8 @@ ActiveRecord::Schema.define(version: 20180301021909) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "image"
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

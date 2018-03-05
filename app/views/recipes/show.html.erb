@@ -1,4 +1,5 @@
 <h2><%=@recipe.name %> </h2>
+<h3>Created by: <%=@recipe.user.name%> </h3>
 <%= render partial: 'recipe_details', locals: {recipe: @recipe} %>
 <%= link_to "Edit recipe", edit_recipe_path(@recipe) %>
 <%= link_to "Delete recipe", "/recipes/#{@recipe.id}", method: "delete" %>
