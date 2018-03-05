@@ -46,12 +46,15 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.update(recipe_params)
+    @recipe = Recipe.find(params[:id])
+    authorize(@recipe)
+    @recipe.update(recipe_params)
     redirect_to recipe_path(@recipe)
   end
 
   def destroy
     @recipe = Recipe.find(params[:id])
+    authorize(@recipe)
     @recipe.destroy
     redirect_to recipes_path
   end
