@@ -15,7 +15,7 @@ ingredients_attributes:
   1 => {name: "whole milk", recipe_ingredients: {quantity: "1 cup"}},
   2 => {name: "sugar", recipe_ingredients: {quantity: "2/3 cups"}},
   3 => {name: "sea salt", recipe_ingredients: {quantity: "1/8 teaspoon"}},
-  4 => {name: "large egg yolks", recipe_ingredients: {quantity: "6"}})
+  4 => {name: "large egg yolks", recipe_ingredients: {quantity: "6"}}})
 # recipe1.ingredients = [
 # Ingredient.create(name: "heavy cream", quantity: "2 cups"),
 # Ingredient.create(name: "whole milk", quantity: "1 cup"),
@@ -31,7 +31,7 @@ ingredients_attributes:
   {0 => {name: "heavy cream", recipe_ingredients: {quantity: "1 cup"}},
   1 => {name: "whole milk", recipe_ingredients: {quantity: "2 cups"}},
   2 => {name: "sugar", recipe_ingredients: {quantity: "1/4 cup"}},
-  3 => {name: "large egg yolks", recipe_ingredients: {quantity: "4"}})
+  3 => {name: "large egg yolks", recipe_ingredients: {quantity: "4"}}})
 # recipe2.ingredients = [
 # Ingredient.create(name: "heavy cream", quantity: "1 cup"),
 # Ingredient.create(name: "whole milk", quantity: "2 cup"),
@@ -74,7 +74,7 @@ Let cake cool in pan for 10 minutes then remove from pan and let cool on a wire 
     4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
     5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
     6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
-recipe4.ingredients = [
+#recipe4.ingredients = [
 # Ingredient.create(name: "white sugar", quantity: "2 tablespoons"),
 # Ingredient.create(name: "white chocolate", quantity: "8 squares"),
 # Ingredient.create(name: "butter", quantity: "1 cup"),
@@ -87,135 +87,135 @@ recipe5 = user.created_recipes.create(name: "Chewy Sugar Cookies", prep_time: 10
 In a large bowl, cream together the margarine and 2 cups sugar until light and fluffy. Beat in the eggs one at a time, then the vanilla. Gradually stir in the dry ingredients until just blended. Roll the dough into walnut sized balls and roll the balls in remaining 1/4 cup of sugar. Place cookies 2 inches apart onto ungreased cookie sheets and flatten slightly.
 Bake for 8 to 10 minutes in the preheated oven, until lightly browned at the edges. Allow cookies to cool on baking sheet for 5 minutes before removing to a wire rack to cool completely.",
 ingredients_attributes:
-  {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-  3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-  5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
-recipe5.ingredients = [
-Ingredient.create(name: "flour", quantity: "2 cups"),
-Ingredient.create(name: "baking soda", quantity: "1 teaspoon"),
-Ingredient.create(name: "salt", quantity: "1/2 teaspoon"),
-Ingredient.create(name: "margarine", quantity: "1/4 cups"),
-Ingredient.create(name: "white sugar", quantity: "2 cups"),
-Ingredient.create(name: "eggs", quantity: "2"),
-Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
+  {0 => {name: "flour", recipe_ingredients: {quantity: "2 tablespoons"}},
+  1 => {name: "baking soda", recipe_ingredients: {quantity: "1 teaspoon"}},
+  2 => {name: "salt", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+  3 => {name: "margarine", recipe_ingredients: {quantity: "1/4 cups"}},
+  4 => {name: "white sugar", recipe_ingredients: {quantity: "2 cups"}},
+  5 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
+  6 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
+#recipe5.ingredients = [
+# Ingredient.create(name: "flour", quantity: "2 cups"),
+# Ingredient.create(name: "baking soda", quantity: "1 teaspoon"),
+# Ingredient.create(name: "salt", quantity: "1/2 teaspoon"),
+# Ingredient.create(name: "margarine", quantity: "1/4 cups"),
+# Ingredient.create(name: "white sugar", quantity: "2 cups"),
+# Ingredient.create(name: "eggs", quantity: "2"),
+# Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
 
 recipe6 = user.created_recipes.create(name: "Breakfast Cookies", prep_time: 10, cook_time: 10, category: "Cookie", instructions: "Preheat oven to 325 degrees F (165 degrees C). Spray 2 baking sheets with cooking spray.
 Whisk oats, pastry flour, flax meal, cinnamon, salt, and baking soda together in a large bowl. Stir honey, egg whites, almond butter, and vanilla extract into oats mixture until dough is well-blended; mix in chocolate chips. Scoop dough into 36 balls and place on prepared baking sheets.
 Bake in the preheated oven until lightly golden and set, 8 to 10 minutes. Cool on the baking sheet for 10 minutes, lightly loosen each cookie from the baking sheet, and continue cooling on the baking sheets for another 10 minutes.",
 ingredients_attributes:
-  {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-  3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-  5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
-recipe6.ingredients = [
-Ingredient.create(name: "rolled oats", quantity: "2 cups"),
-Ingredient.create(name: "whole wheat pastry flour", quantity: "1 cup"),
-Ingredient.create(name: "flax seed meal", quantity: "1/2 cup"),
-Ingredient.create(name: "ground cinnamon", quantity: "2 teaspoons"),
-Ingredient.create(name: "sea salt", quantity: "2 teaspoons"),
-Ingredient.create(name: "eggs", quantity: "2"),
-Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
+  {0 => {name: "rolled oats", recipe_ingredients: {quantity: "2 cups"}},
+  1 => {name: "hole wheat pastry flour", recipe_ingredients: {quantity: "1 cup"}},
+  2 => {name: "flax seed meal", recipe_ingredients: {quantity: "1/2 cup"}},
+  3 => {name: "ground cinnamon", recipe_ingredients: {quantity: "2 teaspoons"}},
+  4 => {name: "sea salt", recipe_ingredients: {quantity: "2 teaspoons"}},
+  5 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
+  6 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
+#recipe6.ingredients = [
+# Ingredient.create(name: "rolled oats", quantity: "2 cups"),
+# Ingredient.create(name: "whole wheat pastry flour", quantity: "1 cup"),
+# Ingredient.create(name: "flax seed meal", quantity: "1/2 cup"),
+# Ingredient.create(name: "ground cinnamon", quantity: "2 teaspoons"),
+# Ingredient.create(name: "sea salt", quantity: "2 teaspoons"),
+# Ingredient.create(name: "eggs", quantity: "2"),
+# Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
 
 recipe7 = user.created_recipes.create(name: "Pumpkin Pie", prep_time: 15, cook_time: 55, category: "Pie", instructions: "Preheat oven to 425 degrees F. Whisk pumpkin, sweetened condensed milk, eggs, spices and salt in medium bowl until smooth. Pour into crust. Bake 15 minutes.
 Reduce oven temperature to 350 degrees F and continue baking 35 to 40 minutes or until knife inserted 1 inch from crust comes out clean. Cool. Garnish as desired. Store leftovers covered in refrigerator.",
 ingredients_attributes:
-  {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-  3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-  5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
-recipe7.ingredients = [
-Ingredient.create(name: "pumpkin", quantity: "1 can"),
-Ingredient.create(name: "sweetened condensed milk", quantity: "1 can"),
-Ingredient.create(name: "ground ginger", quantity: "1/2 teaspoon"),
-Ingredient.create(name: "ground cinnamon", quantity: "1 teaspoon"),
-Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
-Ingredient.create(name: "large eggs", quantity: "2"),
-Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
+  {0 => {name: "pumpkin", recipe_ingredients: {quantity: "1 can"}},
+  1 => {name: "sweetened condensed milk", recipe_ingredients: {quantity: "1 can"}},
+  2 => {name: "ground ginger", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+  3 => {name: "ground cinnamon", recipe_ingredients: {quantity: "1 teaspoon"}},
+  4 => {name: "sea salt", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+  5 => {name: "large eggs", recipe_ingredients: {quantity: "2"}},
+  6 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
+#recipe7.ingredients = [
+# Ingredient.create(name: "pumpkin", quantity: "1 can"),
+# Ingredient.create(name: "sweetened condensed milk", quantity: "1 can"),
+# Ingredient.create(name: "ground ginger", quantity: "1/2 teaspoon"),
+# Ingredient.create(name: "ground cinnamon", quantity: "1 teaspoon"),
+# Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
+# Ingredient.create(name: "large eggs", quantity: "2"),
+# Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
 
-recipe8 = user.created_recipes.create(name: "Coconut Tarts", prep_time: 15, cook_time: 20, category: "Pie", instructions: "reheat oven to 375 degrees F (190 degrees C). Place frozen mini tart shells on a baking sheet.
-Beat the butter, sugar, egg, evaporated milk, and vanilla extract, mixing until fully combined. Stir in the coconut. Place 1/2 teaspoon of jam into each mini tart shell, and fill the shells with about 1 tablespoon of the coconut mixture.
-Bake in the preheated oven until the shells and topping are lightly golden brown, about 20 minutes. Cool on wire rack.",
-ingredients_attributes:
-  {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-  3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-  5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
-recipe8.ingredients = [
-Ingredient.create(name: "frozen mini tart shells", quantity: "12"),
-Ingredient.create(name: "melted butter", quantity: "1/4 cup"),
-Ingredient.create(name: "white sugar", quantity: "1/2 cup"),
-Ingredient.create(name: "ground cinnamon", quantity: "1 teaspoon"),
-Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
-Ingredient.create(name: "large eggs", quantity: "2"),
-Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
-
-recipe9 = user.created_recipes.create(name: "Chocolate Fudge", prep_time: 10, cook_time: 120, category: "Candy", instructions: "In heavy saucepan, over low heat, melt chocolate chips with sweetened condensed milk and salt. Remove from heat; stir in nuts (optional) and vanilla.
-Spread evenly into wax-paper-lined 8- or 9-inch square pan. Chill 2 hours or until firm.
-Life fudge out of pan and place onto cutting board; peel off paper and cut into squares. Store covered in refrigerator.",
-ingredients_attributes:
-  {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-  3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-  5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
-recipe9.ingredients = [
-Ingredient.create(name: "semi-sweet chocolate chips", quantity: "3 cups"),
-Ingredient.create(name: "sweetened condensed milk", quantity: "1 can"),
-Ingredient.create(name: "chopped nuts", quantity: "3/4 cup"),
-Ingredient.create(name: "ground cinnamon", quantity: "1 teaspoon"),
-Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
-Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
-
-recipe10 = user.created_recipes.create(name: "Pretzel Turtles", prep_time: 10, cook_time: 4, category: "Candy", instructions: "Preheat oven to 300 degrees F (150 degrees C).
-Arrange the pretzels in a single layer on a parchment lined cookie sheet. Place one chocolate covered caramel candy on each pretzel.
-Bake for 4 minutes. While the candy is warm, press a pecan half onto each candy covered pretzel. Cool completely before storing in an airtight container.",
-ingredients_attributes:
-  {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-  3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-  5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
-recipe10.ingredients = [
-Ingredient.create(name: "small mini pretzels", quantity: "20"),
-Ingredient.create(name: "chocolate covered caramel candies", quantity: "20"),
-Ingredient.create(name: "pecan halves", quantity: "20")]
-
-recipe11 = user.created_recipes.create(name: "Apple Turnovers", prep_time: 30, cook_time: 25, category: "Pastry", instructions: "Combine the lemon and 4 cups water in a large bowl. Place the sliced apples in the water to keep them from browning.
-Melt butter in a large skillet over medium heat. Drain water from apples, and place them into the hot skillet. Cook and stir for about 2 minutes. Add brown sugar, and cinnamon, and cook, stirring, for 2 more minutes. Stir together cornstarch and 1 tablespoon water. Pour into the skillet, and mix well. Cook for another minute, or until sauce has thickened. Remove from heat to cool slightly.
-Preheat the oven to 400 degrees F (200 degrees C).
-Unfold puff pastry sheets, and repair any cracks by pressing them back together. Trim each sheet into a square. Then cut each larger square into 4 smaller squares. Spoon apples onto the center of each squares. Fold over from corner to corner into a triangle shape, and press edges together to seal. Place turnovers on a baking sheet, leaving about 1 inch between them.
-Bake for 25 minutes in the preheated oven, until turnovers are puffed and lightly browned. Cool completely before glazing.
-To make the glaze, mix together the confectioners' sugar, milk and vanilla in a small bowl. Adjust the thickness by adding more sugar or milk if necessary. Drizzle glaze over the cooled turnovers.",
-ingredients_attributes:
-  {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-  3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-  5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
-recipe11.ingredients = [
-Ingredient.create(name: "lemon juice", quantity: "2 tablespoons"),
-Ingredient.create(name: "water", quantity: "4 cups"),
-Ingredient.create(name: "Granny Smith apples", quantity: "4"),
-Ingredient.create(name: "butter", quantity: "2 tablespoons"),
-Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
-Ingredient.create(name: "brown sugar", quantity: "1 cup"),
-Ingredient.create(name: "cornstarch", quantity: "1 tablespoon")]
+# recipe8 = user.created_recipes.create(name: "Coconut Tarts", prep_time: 15, cook_time: 20, category: "Pie", instructions: "reheat oven to 375 degrees F (190 degrees C). Place frozen mini tart shells on a baking sheet.
+# Beat the butter, sugar, egg, evaporated milk, and vanilla extract, mixing until fully combined. Stir in the coconut. Place 1/2 teaspoon of jam into each mini tart shell, and fill the shells with about 1 tablespoon of the coconut mixture.
+# Bake in the preheated oven until the shells and topping are lightly golden brown, about 20 minutes. Cool on wire rack.",
+# ingredients_attributes:
+#   {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
+#   1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
+#   2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
+#   3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
+#   4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
+#   5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+#   6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+# recipe8.ingredients = [
+# Ingredient.create(name: "frozen mini tart shells", quantity: "12"),
+# Ingredient.create(name: "melted butter", quantity: "1/4 cup"),
+# Ingredient.create(name: "white sugar", quantity: "1/2 cup"),
+# Ingredient.create(name: "ground cinnamon", quantity: "1 teaspoon"),
+# Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
+# Ingredient.create(name: "large eggs", quantity: "2"),
+# Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
+#
+# recipe9 = user.created_recipes.create(name: "Chocolate Fudge", prep_time: 10, cook_time: 120, category: "Candy", instructions: "In heavy saucepan, over low heat, melt chocolate chips with sweetened condensed milk and salt. Remove from heat; stir in nuts (optional) and vanilla.
+# Spread evenly into wax-paper-lined 8- or 9-inch square pan. Chill 2 hours or until firm.
+# Life fudge out of pan and place onto cutting board; peel off paper and cut into squares. Store covered in refrigerator.",
+# ingredients_attributes:
+#   {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
+#   1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
+#   2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
+#   3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
+#   4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
+#   5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+#   6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+# recipe9.ingredients = [
+# Ingredient.create(name: "semi-sweet chocolate chips", quantity: "3 cups"),
+# Ingredient.create(name: "sweetened condensed milk", quantity: "1 can"),
+# Ingredient.create(name: "chopped nuts", quantity: "3/4 cup"),
+# Ingredient.create(name: "ground cinnamon", quantity: "1 teaspoon"),
+# Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
+# Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
+#
+# recipe10 = user.created_recipes.create(name: "Pretzel Turtles", prep_time: 10, cook_time: 4, category: "Candy", instructions: "Preheat oven to 300 degrees F (150 degrees C).
+# Arrange the pretzels in a single layer on a parchment lined cookie sheet. Place one chocolate covered caramel candy on each pretzel.
+# Bake for 4 minutes. While the candy is warm, press a pecan half onto each candy covered pretzel. Cool completely before storing in an airtight container.",
+# ingredients_attributes:
+#   {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
+#   1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
+#   2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
+#   3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
+#   4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
+#   5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+#   6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+# recipe10.ingredients = [
+# Ingredient.create(name: "small mini pretzels", quantity: "20"),
+# Ingredient.create(name: "chocolate covered caramel candies", quantity: "20"),
+# Ingredient.create(name: "pecan halves", quantity: "20")]
+#
+# recipe11 = user.created_recipes.create(name: "Apple Turnovers", prep_time: 30, cook_time: 25, category: "Pastry", instructions: "Combine the lemon and 4 cups water in a large bowl. Place the sliced apples in the water to keep them from browning.
+# Melt butter in a large skillet over medium heat. Drain water from apples, and place them into the hot skillet. Cook and stir for about 2 minutes. Add brown sugar, and cinnamon, and cook, stirring, for 2 more minutes. Stir together cornstarch and 1 tablespoon water. Pour into the skillet, and mix well. Cook for another minute, or until sauce has thickened. Remove from heat to cool slightly.
+# Preheat the oven to 400 degrees F (200 degrees C).
+# Unfold puff pastry sheets, and repair any cracks by pressing them back together. Trim each sheet into a square. Then cut each larger square into 4 smaller squares. Spoon apples onto the center of each squares. Fold over from corner to corner into a triangle shape, and press edges together to seal. Place turnovers on a baking sheet, leaving about 1 inch between them.
+# Bake for 25 minutes in the preheated oven, until turnovers are puffed and lightly browned. Cool completely before glazing.
+# To make the glaze, mix together the confectioners' sugar, milk and vanilla in a small bowl. Adjust the thickness by adding more sugar or milk if necessary. Drizzle glaze over the cooled turnovers.",
+# ingredients_attributes:
+#   {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
+#   1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
+#   2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
+#   3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
+#   4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
+#   5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+#   6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+# recipe11.ingredients = [
+# Ingredient.create(name: "lemon juice", quantity: "2 tablespoons"),
+# Ingredient.create(name: "water", quantity: "4 cups"),
+# Ingredient.create(name: "Granny Smith apples", quantity: "4"),
+# Ingredient.create(name: "butter", quantity: "2 tablespoons"),
+# Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
+# Ingredient.create(name: "brown sugar", quantity: "1 cup"),
+# Ingredient.create(name: "cornstarch", quantity: "1 tablespoon")]
