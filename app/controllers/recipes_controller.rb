@@ -72,9 +72,8 @@ class RecipesController < ApplicationController
 
   def unlike
     @recipe = Recipe.find(params[:id])
-    if current_user.liked_recipes.reject! {|r| r == @recipe}
-    flash[:alert] = "This recipe has been saved!"
-    end
+    current_user.liked_recipes.delete(@recipe) if current_user.liked_recipes.include? (@recipe)
+    flash[:alert] = "This recipe has been removed!"
     redirect_to recipe_path(@recipe)
   end
   private
