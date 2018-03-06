@@ -38,7 +38,7 @@ class User < ApplicationRecord
       array = []
       quantity.times do
         array << Recipe.all.shuffle.detect do |recipe|
-          recipe.category == favorite_category && !array.include?(recipe)
+          recipe.category == favorite_category && !array.include?(recipe) && !self.all_recipes.include?(recipe)
           #binding.pry
         end
       end

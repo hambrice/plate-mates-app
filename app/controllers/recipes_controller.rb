@@ -12,7 +12,6 @@ class RecipesController < ApplicationController
     elsif params[:query] != nil
       @recipes = Recipe.all.select {|s| s.name.downcase.include?(params[:query].downcase)}
     else
-    #@categories = ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
 
     @recipes = Recipe.all
     end
@@ -26,9 +25,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    binding.pry
     @recipe = current_user.created_recipes.build(recipe_params)
-    #binding.pry
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
