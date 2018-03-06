@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :ingredients
   resources :recipes
+  post 'recipes/:id/like', to: 'recipes#like', as: 'like_recipe'
   get 'home', to: 'site#home', as: 'home'
   root 'site#index'
   get 'profiles/:id', to: 'site#show', as: 'user'
