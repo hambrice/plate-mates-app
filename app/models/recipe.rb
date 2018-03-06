@@ -48,6 +48,11 @@ class Recipe < ApplicationRecord
   #   end
   # end
 
+
+  def self.category_list
+    ["Cakes","Frozen Treats", "Cookies", "Pies", "Candies", "Pastries", "Miscellaneous"]
+  end
+
   def self.category_array(category)
     self.all.select do |recipe|
       recipe.category == category
