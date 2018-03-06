@@ -70,6 +70,13 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
+  def unlike
+    @recipe = Recipe.find(params[:id])
+    if current_user.liked_recipes.reject! {|r| r == @recipe}
+    flash[:alert] = "This recipe has been saved!"
+    end
+    redirect_to recipe_path(@recipe)
+  end
   private
 
   def recipe_params
