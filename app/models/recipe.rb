@@ -13,7 +13,7 @@ class Recipe < ApplicationRecord
 
 
   def sanitize_ingredient_name(name)
-    name.split(" ").join.capitalize
+    name.split(" ").join.downcase
   end
 
   def ingredients_attributes=(ingredients_attributes)
@@ -35,6 +35,9 @@ class Recipe < ApplicationRecord
     end
   end
 
+  def self.recently_created(amount)
+    self.last(amount)
+  end
   # def ingredients_attributes=(ingredients_attributes)
   #   ingredient = Ingredient.find_by(name:)
   #   self.ingredients.clear
@@ -73,7 +76,7 @@ class Recipe < ApplicationRecord
 
   def ingredient_list
     self.recipe_ingredients.collect do |ing|
-      ing.ingredient.name + " - " + ing.quantity
+      ing.quantity + " " + ing.ingredient.name
     end
   end
 end
