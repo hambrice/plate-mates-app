@@ -1,3 +1,6 @@
+<% if current_user %>
+<%= link_to "Save this recipe", like_recipe_path, method: "post" %><br><br>
+<% end %>
 Prep Time:<strong><%= recipe.prep_time %></strong>
 Cook Time: <strong><%= recipe.cook_time %></strong><br><br>
 <% recipe.recipe_ingredients.each do |ing| %>

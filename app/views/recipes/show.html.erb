@@ -1,8 +1,7 @@
 <h2><%=@recipe.name %> </h2>
 <h3>Created by: <%=link_to @recipe.user.name, user_recipes_path(@recipe.user)%> </h3>
 <%= render partial: 'recipe_details', locals: {recipe: @recipe} %>
-<% if current_user %>
-<%= link_to "Save this recipe", like_recipe_path, method: "post" %>
+
 <% if policy(@recipe).update? %>
 <%= link_to "Edit recipe", edit_recipe_path(@recipe) %>
 <%= link_to "Delete recipe", "/recipes/#{@recipe.id}", method: "delete" %>
