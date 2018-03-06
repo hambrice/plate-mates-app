@@ -37,9 +37,9 @@ class User < ApplicationRecord
       favorite_category = hash.sort_by{|category, amount| amount}.last[0]
       array = []
       quantity.times do
-        Recipe.all.shuffle.find do |recipe|
-          array << recipe if recipe.category == favorite_category && !array.include?(recipe)
-          binding.pry
+        array << Recipe.all.shuffle.detect do |recipe|
+          recipe.category == favorite_category && !array.include?(recipe)
+          #binding.pry
         end
       end
       array
