@@ -1,5 +1,9 @@
 <% if current_user %>
-<%= link_to "Save this recipe", like_recipe_path, method: "post" %><br><br>
+  <% if current_user.saved_recipes.include? (recipe) %>
+    <%= link_to "Save this recipe", like_recipe_path, method: "post"%><br><br>
+  <% else %>
+    <%= link_to "Remove this recipe from saved list", unlike_recipe_path, method: "post" %><br><br>
+  <% end %>
 <% end %>
 Prep Time:<strong><%= recipe.prep_time %></strong>
 Cook Time: <strong><%= recipe.cook_time %></strong><br><br>
