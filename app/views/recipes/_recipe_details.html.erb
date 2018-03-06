@@ -8,6 +8,6 @@
 Prep Time:<strong><%= recipe.prep_time %></strong>
 Cook Time: <strong><%= recipe.cook_time %></strong><br><br>
 <% recipe.recipe_ingredients.each do |ing| %>
-<%="#{ing.ingredient.quantity}" + " " + "#{ing.ingredient.name}" %><br>
+<%="#{ing.quantity}" + " " + "#{ing.ingredient.name}" %><br>
 <% end %><br><br>
 <%=recipe.instructions%>

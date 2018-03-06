@@ -16,15 +16,17 @@
 <%= t.label :name %>
 <%= t.text_field :name %><br><br>
 <%= t.label "Category" %><br><br>
-<% ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"].each do |category| %>
+<% Recipe.category_list.each do |category| %>
 <%= t.label category %>
 <%= t.radio_button(:category, category) %>
 <% end %><br><br>
 <%= t.fields_for :ingredients do |f| %>
 <%= f.label "Ingredient" %>
   <%= f.text_field :name %>
-  <%= f.label "Amount" %>
-  <%= f.text_field :quantity %><br>
+    <%= f.fields_for :recipe_ingredients do |g| %>
+  <%= g.label "Amount" %>
+  <%= g.text_field :quantity %><br>
+  <% end %>
   <% end %><br><br>
 <%= t.label "Prep Time(in minutes)" %>
 <%= t.number_field :prep_time %>

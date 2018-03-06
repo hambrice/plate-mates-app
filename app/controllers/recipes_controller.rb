@@ -19,15 +19,14 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @categories = ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
     @recipe = Recipe.new
     10.times do
-    @recipe.ingredients.build
+    @recipe.ingredients.build.recipe_ingredients.build
     end
   end
 
   def create
-    #binding.pry
+    binding.pry
     @recipe = current_user.created_recipes.build(recipe_params)
     #binding.pry
     if @recipe.save
@@ -42,7 +41,6 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @categories = ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
     @recipe = Recipe.find(params[:id])
     (10 - @recipe.ingredients.count).times do
       @recipe.ingredients.build
@@ -87,7 +85,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :category, :prep_time, :cook_time, :instructions, ingredients_attributes:[:name, :quantity])
+    params.require(:recipe).permit(:name, :category, :prep_time, :cook_time, :instructions, ingredients_attributes:[:name, recipe_ingredients:[:quantity]])
   end
 
   def require_login
