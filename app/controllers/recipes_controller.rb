@@ -29,10 +29,11 @@ class RecipesController < ApplicationController
   def create
     #binding.pry
     @recipe = current_user.created_recipes.build(recipe_params)
-    binding.pry
+    #binding.pry
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
+      @recipe.errors.full_messages
       render :new
     end
   end

@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
+  validates :name, presence: true
   #accepts_nested_attributes_for :ingredients
 
 
@@ -22,7 +23,7 @@ class Recipe < ApplicationRecord
           ingredient = Ingredient.create(name: name) if ingredient == nil
           join = self.recipe_ingredients.build(ingredient_id: ingredient.id, quantity: attributes[:quantity])
           join.save
-          binding.pry
+          #binding.pry
           #self.ingredients << ingredient
       end
 

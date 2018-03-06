@@ -12,7 +12,7 @@
     <% if current_user %>
     <div align = "right">  <img src="<%= current_user.image %>" height="50">
        <details>
-         <summary><strong><%= current_user.name %> </summary>
+         <summary><strong><%= current_user.name %> </strong></summary>
       <%= link_to "Home", root_path %>
       <%= link_to "Browse recipes", recipes_path %>
       <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %>
