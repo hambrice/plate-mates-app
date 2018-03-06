@@ -34,6 +34,9 @@ class RecipesController < ApplicationController
       redirect_to recipe_path(@recipe)
     else
       @recipe.errors.full_messages
+      10.times do
+      @recipe.ingredients.build
+      end
       render :new
     end
   end
@@ -52,6 +55,10 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
     else
+      @recipe.errors.full_messages
+      (10 - @recipe.ingredients.count).times do
+        @recipe.ingredients.build
+        end
       render :edit
     end
   end

@@ -5,6 +5,10 @@ class Recipe < ApplicationRecord
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
   validates :name, presence: true
+  validates :instructions, presence: true
+  validates :category, presence: true
+  validates :prep_time, presence: true
+  validates :cook_time, presence: true
   #accepts_nested_attributes_for :ingredients
 
 

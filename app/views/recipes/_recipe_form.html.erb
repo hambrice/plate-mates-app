@@ -2,7 +2,7 @@
 <%= t.label :name %>
 <%= t.text_field :name %><br><br>
 <%= t.label "Category" %><br><br>
-<% @categories.each do |category| %>
+<% ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"].each do |category| %>
 <%= t.label category %>
 <%= t.radio_button(:category, category) %>
 <% end %><br><br>
