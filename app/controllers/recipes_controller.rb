@@ -63,6 +63,13 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
+  def like
+    @recipe = Recipe.find(params[:id])
+    current_user.liked_recipes << @recipe
+    flash[:alert] = "This recipe has been saved!"
+    redirect_to recipe_path(@recipe)
+  end
+
   private
 
   def recipe_params
