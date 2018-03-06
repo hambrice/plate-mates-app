@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
 
   def index
     if params[:user_id]
-      @recipes = User.find(params[:user_id]).recipes
+      @recipes = User.find(params[:user_id]).created_recipes
   elsif params[:query] != nil
       @recipes = Recipe.all.select {|s| s.name.downcase.include?(params[:query].downcase)}
     else

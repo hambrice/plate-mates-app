@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
   #accepts_nested_attributes_for :ingredients
 
+
   def sanitize_ingredient_name(name)
     name.split(" ").join.capitalize
   end
