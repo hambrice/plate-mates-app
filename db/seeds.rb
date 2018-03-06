@@ -142,17 +142,17 @@ ingredients_attributes:
 # Ingredient.create(name: "large eggs", quantity: "2"),
 # Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
 
-# recipe8 = user.created_recipes.create(name: "Coconut Tarts", prep_time: 15, cook_time: 20, category: "Pie", instructions: "reheat oven to 375 degrees F (190 degrees C). Place frozen mini tart shells on a baking sheet.
-# Beat the butter, sugar, egg, evaporated milk, and vanilla extract, mixing until fully combined. Stir in the coconut. Place 1/2 teaspoon of jam into each mini tart shell, and fill the shells with about 1 tablespoon of the coconut mixture.
-# Bake in the preheated oven until the shells and topping are lightly golden brown, about 20 minutes. Cool on wire rack.",
-# ingredients_attributes:
-#   {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-#   1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-#   2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-#   3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-#   4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-#   5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-#   6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+recipe8 = user.created_recipes.create(name: "Coconut Tarts", prep_time: 15, cook_time: 20, category: "Pie", instructions: "reheat oven to 375 degrees F (190 degrees C). Place frozen mini tart shells on a baking sheet.
+Beat the butter, sugar, egg, evaporated milk, and vanilla extract, mixing until fully combined. Stir in the coconut. Place 1/2 teaspoon of jam into each mini tart shell, and fill the shells with about 1 tablespoon of the coconut mixture.
+Bake in the preheated oven until the shells and topping are lightly golden brown, about 20 minutes. Cool on wire rack.",
+ingredients_attributes:
+  {0 => {name: "frozen mini tart shells", recipe_ingredients: {quantity: "12"}},
+  1 => {name: "melted butter", recipe_ingredients: {quantity: "1/4 cup"}},
+  2 => {name: "white sugar", recipe_ingredients: {quantity: "1/2 cup"}},
+  3 => {name: "ground cinnamon", recipe_ingredients: {quantity: "1 teaspoon"}},
+  4 => {name: "sea salt", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+  5 => {name: "large eggs", recipe_ingredients: {quantity: "2"}},
+  6 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
 # recipe8.ingredients = [
 # Ingredient.create(name: "frozen mini tart shells", quantity: "12"),
 # Ingredient.create(name: "melted butter", quantity: "1/4 cup"),
@@ -161,18 +161,17 @@ ingredients_attributes:
 # Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
 # Ingredient.create(name: "large eggs", quantity: "2"),
 # Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
-#
-# recipe9 = user.created_recipes.create(name: "Chocolate Fudge", prep_time: 10, cook_time: 120, category: "Candy", instructions: "In heavy saucepan, over low heat, melt chocolate chips with sweetened condensed milk and salt. Remove from heat; stir in nuts (optional) and vanilla.
-# Spread evenly into wax-paper-lined 8- or 9-inch square pan. Chill 2 hours or until firm.
-# Life fudge out of pan and place onto cutting board; peel off paper and cut into squares. Store covered in refrigerator.",
-# ingredients_attributes:
-#   {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-#   1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-#   2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-#   3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-#   4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-#   5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-#   6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+
+recipe9 = user.created_recipes.create(name: "Chocolate Fudge", prep_time: 10, cook_time: 120, category: "Candy", instructions: "In heavy saucepan, over low heat, melt chocolate chips with sweetened condensed milk and salt. Remove from heat; stir in nuts (optional) and vanilla.
+Spread evenly into wax-paper-lined 8- or 9-inch square pan. Chill 2 hours or until firm.
+Life fudge out of pan and place onto cutting board; peel off paper and cut into squares. Store covered in refrigerator.",
+ingredients_attributes:
+  {0 => {name: "semi-sweet chocolate chips", recipe_ingredients: {quantity: "3 cups"}},
+  1 => {name: "sweetened condensed milk", recipe_ingredients: {quantity: "1 can"}},
+  2 => {name: "chopped nuts", recipe_ingredients: {quantity: "3/4 cups"}},
+  3 => {name: "ground cinnamon", recipe_ingredients: {quantity: "1 teaspoon"}},
+  4 => {name: "sea salt", recipe_ingredients: {quantity: "1/2 teaspoons"}},
+  5 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
 # recipe9.ingredients = [
 # Ingredient.create(name: "semi-sweet chocolate chips", quantity: "3 cups"),
 # Ingredient.create(name: "sweetened condensed milk", quantity: "1 can"),
@@ -180,37 +179,33 @@ ingredients_attributes:
 # Ingredient.create(name: "ground cinnamon", quantity: "1 teaspoon"),
 # Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
 # Ingredient.create(name: "vanilla extract", quantity: "3 teaspoons")]
-#
-# recipe10 = user.created_recipes.create(name: "Pretzel Turtles", prep_time: 10, cook_time: 4, category: "Candy", instructions: "Preheat oven to 300 degrees F (150 degrees C).
-# Arrange the pretzels in a single layer on a parchment lined cookie sheet. Place one chocolate covered caramel candy on each pretzel.
-# Bake for 4 minutes. While the candy is warm, press a pecan half onto each candy covered pretzel. Cool completely before storing in an airtight container.",
-# ingredients_attributes:
-#   {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-#   1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-#   2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-#   3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-#   4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-#   5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-#   6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+
+recipe10 = user.created_recipes.create(name: "Pretzel Turtles", prep_time: 10, cook_time: 4, category: "Candy", instructions: "Preheat oven to 300 degrees F (150 degrees C).
+Arrange the pretzels in a single layer on a parchment lined cookie sheet. Place one chocolate covered caramel candy on each pretzel.
+Bake for 4 minutes. While the candy is warm, press a pecan half onto each candy covered pretzel. Cool completely before storing in an airtight container.",
+ingredients_attributes:
+  {0 => {name: "small mini pretzels", recipe_ingredients: {quantity: "20"}},
+  1 => {name: "chocolate covered caramel candies", recipe_ingredients: {quantity: "20"}},
+  2 => {name: "pecan halves", recipe_ingredients: {quantity: "20"}}})
 # recipe10.ingredients = [
 # Ingredient.create(name: "small mini pretzels", quantity: "20"),
 # Ingredient.create(name: "chocolate covered caramel candies", quantity: "20"),
 # Ingredient.create(name: "pecan halves", quantity: "20")]
-#
-# recipe11 = user.created_recipes.create(name: "Apple Turnovers", prep_time: 30, cook_time: 25, category: "Pastry", instructions: "Combine the lemon and 4 cups water in a large bowl. Place the sliced apples in the water to keep them from browning.
-# Melt butter in a large skillet over medium heat. Drain water from apples, and place them into the hot skillet. Cook and stir for about 2 minutes. Add brown sugar, and cinnamon, and cook, stirring, for 2 more minutes. Stir together cornstarch and 1 tablespoon water. Pour into the skillet, and mix well. Cook for another minute, or until sauce has thickened. Remove from heat to cool slightly.
-# Preheat the oven to 400 degrees F (200 degrees C).
-# Unfold puff pastry sheets, and repair any cracks by pressing them back together. Trim each sheet into a square. Then cut each larger square into 4 smaller squares. Spoon apples onto the center of each squares. Fold over from corner to corner into a triangle shape, and press edges together to seal. Place turnovers on a baking sheet, leaving about 1 inch between them.
-# Bake for 25 minutes in the preheated oven, until turnovers are puffed and lightly browned. Cool completely before glazing.
-# To make the glaze, mix together the confectioners' sugar, milk and vanilla in a small bowl. Adjust the thickness by adding more sugar or milk if necessary. Drizzle glaze over the cooled turnovers.",
-# ingredients_attributes:
-#   {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-#   1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-#   2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-#   3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-#   4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-#   5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-#   6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+
+recipe11 = user.created_recipes.create(name: "Apple Turnovers", prep_time: 30, cook_time: 25, category: "Pastry", instructions: "Combine the lemon and 4 cups water in a large bowl. Place the sliced apples in the water to keep them from browning.
+Melt butter in a large skillet over medium heat. Drain water from apples, and place them into the hot skillet. Cook and stir for about 2 minutes. Add brown sugar, and cinnamon, and cook, stirring, for 2 more minutes. Stir together cornstarch and 1 tablespoon water. Pour into the skillet, and mix well. Cook for another minute, or until sauce has thickened. Remove from heat to cool slightly.
+Preheat the oven to 400 degrees F (200 degrees C).
+Unfold puff pastry sheets, and repair any cracks by pressing them back together. Trim each sheet into a square. Then cut each larger square into 4 smaller squares. Spoon apples onto the center of each squares. Fold over from corner to corner into a triangle shape, and press edges together to seal. Place turnovers on a baking sheet, leaving about 1 inch between them.
+Bake for 25 minutes in the preheated oven, until turnovers are puffed and lightly browned. Cool completely before glazing.
+To make the glaze, mix together the confectioners' sugar, milk and vanilla in a small bowl. Adjust the thickness by adding more sugar or milk if necessary. Drizzle glaze over the cooled turnovers.",
+ingredients_attributes:
+  {0 => {name: "lemon juice", recipe_ingredients: {quantity: "2 tablespoons"}},
+  1 => {name: "water", recipe_ingredients: {quantity: "4 cups"}},
+  2 => {name: "butter", recipe_ingredients: {quantity: "2 tablespoons"}},
+  3 => {name: "Granny Smith apples", recipe_ingredients: {quantity: "4"}},
+  4 => {name: "sea salt", recipe_ingredients: {quantity: "1/2 teaspoon"}},
+  5 => {name: "brown sugar", recipe_ingredients: {quantity: "1 cup"}},
+  6 => {name: "cornstarch", recipe_ingredients: {quantity: "1 tablespoon"}}})
 # recipe11.ingredients = [
 # Ingredient.create(name: "lemon juice", quantity: "2 tablespoons"),
 # Ingredient.create(name: "water", quantity: "4 cups"),
