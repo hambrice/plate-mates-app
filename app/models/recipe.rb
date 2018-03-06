@@ -38,6 +38,7 @@ class Recipe < ApplicationRecord
   def self.recently_created(amount)
     self.last(amount)
   end
+
   # def ingredients_attributes=(ingredients_attributes)
   #   ingredient = Ingredient.find_by(name:)
   #   self.ingredients.clear
@@ -54,7 +55,7 @@ class Recipe < ApplicationRecord
 
 
   def self.category_list
-    ["Cakes","Frozen Treats", "Cookies", "Pies", "Candies", "Pastries", "Miscellaneous"]
+    ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
   end
 
   def self.category_array(category)

@@ -22,4 +22,12 @@ class User < ApplicationRecord
     def all_recipes
       self.created_recipes + self.liked_recipes
     end
+
+    def recommended_recipes(amount)
+      if self.all_recipes.count > 0
+        Recipe.category_list.collect do |category|
+          self.all_recipes.select {|r| r.category == category}
+        end
+      end
+    end
 end
