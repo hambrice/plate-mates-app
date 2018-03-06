@@ -10,7 +10,7 @@
 
   <body>
     <% if current_user %>
-    <div align = "right">  <img src="<%= current_user.image %>">
+    <div align = "right">  <img src="<%= current_user.image %>" height="50">
        <details>
          <summary><strong><%= current_user.name %> </summary>
       <%= link_to "Home", root_path %>

@@ -8,8 +8,8 @@ class RecipesController < ApplicationController
 
   def index
     if params[:user_id]
-      @recipes = User.find(params[:user_id]).created_recipes
-  elsif params[:query] != nil
+      current_user == User.find(params[:user_id]) ? @recipes = User.find(params[:user_id]).all_recipes : @recipes = User.find(params[:user_id].created_recipes)
+    elsif params[:query] != nil
       @recipes = Recipe.all.select {|s| s.name.downcase.include?(params[:query].downcase)}
     else
     #@categories = ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
 
   def create
     #binding.pry
-    @recipe = current_user.recipes.build(recipe_params)
+    @recipe = current_user.created_recipes.build(recipe_params)
     binding.pry
     if @recipe.save
       redirect_to recipe_path(@recipe)
