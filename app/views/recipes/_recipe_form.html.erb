@@ -25,6 +25,7 @@
 <%= t.fields_for :ingredients do |f| %>
 <%= f.label :name, "Ingredient" %>
   <%= f.text_field :name %>
+  <%= binding.pry %>
     <%= f.fields_for :recipe_ingredients do |g| %>
   <%= g.label :quantity, "Amount" %>
   <%= g.text_field :quantity %><br>

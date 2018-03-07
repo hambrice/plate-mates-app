@@ -10,17 +10,29 @@
 
   <body>
     <% if current_user %>
-    <h1><strong>Plate</strong><i>Mates</i></h1>
-    <div align = "right">  <img src="<%= current_user.image %>" height="50">
-       <details>
-         <summary><strong><%= current_user.name %> </strong></summary>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Browse Recipes", recipes_path %>
-      <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %>
-      <%= link_to "Create New Recipe", new_recipe_path %>
-      <%= link_to 'Edit Profile',edit_user_registration_path %>
-      <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-    </details></div>
+    <div class="navbar">
+      <div class="headline"><strong>Plate</strong><i>Mates</i></div>
+  <%= link_to "Home", root_path %>
+  <div class="dropdown">
+    <button class="dropbtn">Profile
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+<%= link_to "Edit Profile", edit_user_registration_path %>
+<%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Recipes
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+<%= link_to "Browse Recipes", recipes_path %>
+<%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %>
+<%= link_to "Create New Recipe", new_recipe_path %>
+    </div>
+  </div>
+</div>
     <% end %><br><br>
     <% if flash[:alert] %>
     <strong><%= flash[:alert] %></strong><br><br>

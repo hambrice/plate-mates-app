@@ -49,6 +49,7 @@ class RecipesController < ApplicationController
   end
 
   def update
+    #binding.pry
     @recipe = Recipe.find(params[:id])
     authorize(@recipe)
     if @recipe.update(recipe_params)
@@ -70,23 +71,23 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
-  def like
-    @recipe = Recipe.find(params[:id])
-    current_user.liked_recipes << @recipe
-    flash[:alert] = "This recipe has been saved!"
-    redirect_to recipe_path(@recipe)
-  end
+  # def like
+  #   @recipe = Recipe.find(params[:id])
+  #   current_user.liked_recipes << @recipe
+  #   flash[:alert] = "This recipe has been saved!"
+  #   redirect_to recipe_path(@recipe)
+  # end
 
-  def unlike
-    @recipe = Recipe.find(params[:id])
-    current_user.liked_recipes.delete(@recipe) if current_user.liked_recipes.include? (@recipe)
-    flash[:alert] = "This recipe has been removed!"
-    redirect_to recipe_path(@recipe)
-  end
+  # def unlike
+  #   @recipe = Recipe.find(params[:id])
+  #   current_user.liked_recipes.delete(@recipe) if current_user.liked_recipes.include? (@recipe)
+  #   flash[:alert] = "This recipe has been removed!"
+  #   redirect_to recipe_path(@recipe)
+  # end
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :category, :prep_time, :cook_time, :instructions, ingredients_attributes:[:name, recipe_ingredients:[:quantity]])
+    params.require(:recipe).permit(:name, :category, :prep_time, :cook_time, :instructions, :image, ingredients_attributes:[:name, recipe_ingredients:[:quantity]])
   end
 
   def require_login

@@ -9,8 +9,14 @@ class Recipe < ApplicationRecord
   validates :category, presence: true
   validates :prep_time, presence: true
   validates :cook_time, presence: true
+  validate :image_must_be_an_image_file_type
   #accepts_nested_attributes_for :ingredients
 
+  def image_must_be_an_image_file_type
+    if !image.include?(".jpg") && !image.include?(".png") && !image.include?(".jpeg")
+      errors.add(:image, "must be a .png, .jpeg, or .jpg file type")
+    end
+  end
 
   def sanitize_ingredient_name(name)
     name.split(" ").join(" ").downcase

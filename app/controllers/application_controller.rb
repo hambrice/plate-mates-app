@@ -19,4 +19,15 @@ rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
     redirect_to(request.referrer || root_path)
   end
+
+  # <div align = "right">  <img src="<%= current_user.image %>" height="50">
+  #    <details>
+  #      <summary><strong><%= current_user.name %> </strong></summary>
+  #   <%= link_to "Home", root_path %>
+  #   <%= link_to "Browse Recipes", recipes_path %>
+  #   <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %>
+  #   <%= link_to "Create New Recipe", new_recipe_path %>
+  #   <%= link_to 'Edit Profile',edit_user_registration_path %>
+  #   <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+  # </details></div>
 end

@@ -1,15 +1,14 @@
 <img src="<%= @user.image %>"><br>
 <h3>Welcome, <%= @user.first_name %>! </h3>
-<%= link_to "user page", user_path(@user) %>
-<%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-<%= link_to 'Edit Profile',edit_user_registration_path %> <br>
-<h5><%= link_to "Browse recipes", recipes_path %> </h5>
-<h5> <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %> </h5>
-<h2> Recommended Recipes </h2>
+<div class="recipe_headline">
+  <h2> Recommended Recipes </h2>
 <%if @recommended_recipes != nil %>
 <%= render partial: "recipes/recipe_summary", collection: @recommended_recipes, as: :recipe %>
 <% else %>
 <h4 align="center"> You'll need to save or create more recipes! </h4>
 <% end %>
+</div>
+<div class="recipe_headline">
 <h2> New Recipes </h2>
 <%= render partial: "recipes/recipe_summary", collection: @new_recipes, as: :recipe %>
+</div>
