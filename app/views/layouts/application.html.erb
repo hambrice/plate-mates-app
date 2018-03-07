@@ -10,13 +10,14 @@
 
   <body>
     <% if current_user %>
-    <div><h1><strong>Plate</strong><i>Mates</i></h1></div>
+    <h1><strong>Plate</strong><i>Mates</i></h1>
     <div align = "right">  <img src="<%= current_user.image %>" height="50">
        <details>
          <summary><strong><%= current_user.name %> </strong></summary>
       <%= link_to "Home", root_path %>
-      <%= link_to "Browse recipes", recipes_path %>
+      <%= link_to "Browse Recipes", recipes_path %>
       <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %>
+      <%= link_to "Create New Recipe", new_recipe_path %>
       <%= link_to 'Edit Profile',edit_user_registration_path %>
       <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
     </details></div>

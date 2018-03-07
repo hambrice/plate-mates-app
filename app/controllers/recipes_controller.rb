@@ -8,7 +8,11 @@ class RecipesController < ApplicationController
 
   def index
     if params[:user_id]
-      current_user == User.find(params[:user_id]) ? @recipes = User.find(params[:user_id]).all_recipes : @recipes = User.find(params[:user_id].created_recipes)
+      if params[:query] != nil
+        current_user == User.find(params[:user_id]) ? @recipes = User.find(params[:user_id]).all_recipes.select {|s| s.name.downcase.include?(params[:query].downcase)} : @recipes = User.find(params[:user_id]).created_recipes.select {|s| s.name.downcase.include?(params[:query].downcase)}
+      else
+        current_user == User.find(params[:user_id]) ? @recipes = User.find(params[:user_id]).all_recipes : @recipes = User.find(params[:user_id]).created_recipes
+      end
     elsif params[:query] != nil
       @recipes = Recipe.all.select {|s| s.name.downcase.include?(params[:query].downcase)}
     else

@@ -13,7 +13,7 @@ class Recipe < ApplicationRecord
 
 
   def sanitize_ingredient_name(name)
-    name.split(" ").join.downcase
+    name.split(" ").join(" ").downcase
   end
 
   def ingredients_attributes=(ingredients_attributes)
