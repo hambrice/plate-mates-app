@@ -265,3 +265,29 @@ Ladle the cherries and their juices over prepared ice cream scoops. Serve immedi
     2 => {name: "sugar", recipe_ingredients: {quantity: "1/2 cup"}},
     3 => {name: "lemon", recipe_ingredients: {quantity: "1"}},
     4 => {name: "golden rum", recipe_ingredients: {quantity: "1/3 cup"}}})
+recipe16 = user2.created_recipes.create(name: "Frozen Banana Bites", image:"https://images.media-allrecipes.com/userphotos/720x405/1245585.jpg", prep_time: 30, cook_time: 105, category: "Frozen", instructions: "Cover a baking sheet with waxed paper.
+Spoon a thin layer of peanut butter on top of each banana slice. Insert a toothpick through the peanut butter layer into the banana. Place banana bites onto the prepared baking sheet; freeze for 30 minutes to overnight.
+Melt chocolate and shortening in the top of a double boiler over simmering water, stirring frequently and scraping down the sides with a rubber spatula to avoid scorching.
+Cover another baking sheet with waxed paper.
+Remove 2 to 4 banana bites from the freezer at a time; coat each bite with chocolate mixture. Place coated banana bites on the second baking sheet; sprinkle each with toffee bits. Repeat until all the bites are coated. Return banana bites to freezer until set, at least 1 hour. Allow bites to sit in room temperature for about 15 minutes before serving.",
+  ingredients_attributes:
+    {0 => {name: "peanut butter", recipe_ingredients: {quantity: "1 cup"}},
+    1 => {name: "bananas", recipe_ingredients: {quantity: "4"}},
+    2 => {name: "semisweet chocolate", recipe_ingredients: {quantity: "8 squares"}},
+    3 => {name: "shortening", recipe_ingredients: {quantity: "1 tablespoon"}},
+    4 => {name: "coffee baking bits", recipe_ingredients: {quantity: "1/3 cup"}}})
+recipe17 = user2.created_recipes.create(name: "Frozen Margarita Pie", image:"https://images.media-allrecipes.com/userphotos/720x405/5113746.jpg", prep_time: 15, cook_time: 5, category: "Frozen", instructions: "Preheat oven to 375 degrees F (190 degrees C).
+Mix pretzels and sugar together in a bowl; stir in margarine until evenly incorporated. Spoon mixture into a 9-inch pie plate; press into bottom and up sides of plate to form a firm, even crust.
+Bake crust in the preheated oven until edges are lightly browned, about 5 minutes. Cool on a wire rack.
+Mix sweetened condensed milk, limeade concentrate, tequila, orange liqueur, and green food coloring in a large bowl.
+Beat cream in a glass or metal bowl until soft peaks form. Lift your beater or whisk straight up: the whipped cream will form soft mounds rather than a sharp peak. Fold whipped cream into sweetened condensed milk mixture. Spoon filling into cooled crust.
+Cover pie with plastic wrap and freeze until firm, about 4 hours. Let stand for 10 minutes before serving; garnish with lime slices.",
+  ingredients_attributes:
+    {0 => {name: "pretzels", recipe_ingredients: {quantity: "1 cup"}},
+    1 => {name: "white sugar", recipe_ingredients: {quantity: "1/4 cup"}},
+    2 => {name: "margarine", recipe_ingredients: {quantity: "1/3 cup"}},
+    3 => {name: "sweetened condensed milk", recipe_ingredients: {quantity: "1 can"}},
+    4 => {name: "tequila", recipe_ingredients: {quantity: "2 tablespoons"}},
+    5 => {name: "orange liqueur", recipe_ingredients: {quantity: "1 tablespoon"}},
+    6 => {name: "heavy whipping cream", recipe_ingredients: {quantity: "1 cup"}},
+    7 => {name: "frozen limeade", recipe_ingredients: {quantity: "1/3 cup"}}})
