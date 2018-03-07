@@ -7,10 +7,11 @@ class SiteController < ApplicationController
 
   def home
     @user = current_user
-    @recipes = Recipe.first(3)
+    @new_recipes = Recipe.first(3)
+    @recommended_recipes = current_user.recommended_recipes(3)
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  # end
 end

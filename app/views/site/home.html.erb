@@ -6,3 +6,6 @@
 <h5><%= link_to "Browse recipes", recipes_path %> </h5>
 <h5> <%= link_to "View Saved/Created Recipes", user_recipes_path(current_user) %> </h5>
 <h2> Recommended Recipes </h2>
+<%= render partial: "recipes/recipe_summary", collection: @recommended_recipes, as: :recipe %>
+<h2> New Recipes </h2>
+<%= render partial: "recipes/recipe_summary", collection: @new_recipes, as: :recipe %>

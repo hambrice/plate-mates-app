@@ -33,13 +33,13 @@ class User < ApplicationRecord
           self.all_recipes.each {|r| hash[category] += 1 if r.category == category}
           #binding.pry
         end
-      end
-      favorite_category = hash.sort_by{|category, amount| amount}.last[0]
-      array = []
-      quantity.times do
-        array << Recipe.all.shuffle.detect do |recipe|
-          recipe.category == favorite_category && !array.include?(recipe) && !self.all_recipes.include?(recipe)
-          #binding.pry
+        favorite_category = hash.sort_by{|category, amount| amount}.last[0]
+        array = []
+        quantity.times do
+          array << Recipe.all.shuffle.detect do |recipe|
+            recipe.category == favorite_category && !array.include?(recipe) && !self.all_recipes.include?(recipe)
+            binding.pry
+          end
         end
       end
       array
