@@ -42,7 +42,7 @@ class User < ApplicationRecord
           end
         end
       end
-      array
+      array.delete_if{|x| x == nil} if array != nil
       #binding.pry
     end
 end
