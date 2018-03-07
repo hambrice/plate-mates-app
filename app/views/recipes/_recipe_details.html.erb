@@ -1,8 +1,8 @@
 <% if current_user %>
   <% if current_user.liked_recipes.include?(recipe) %>
-    <%= link_to "Remove this recipe from saved list", unlike_recipe_path, method: "post" %><br><br>
+    <%= link_to "Remove this recipe from saved list", recipe_like_path(recipe), method: "delete" %><br><br>
   <% else %>
-    <%= link_to "Save this recipe", like_recipe_path, method: "post"%><br><br>
+    <%= link_to "Save this recipe", recipe_likes_path(recipe), method: "post"%><br><br>
   <% end %>
 <% end %>
 <img src="<%= recipe.image %>"><br><br>
