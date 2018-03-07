@@ -15,18 +15,18 @@
 <%= form_for recipe do |t| %>
 <%= t.label :name %>
 <%= t.text_field :name %><br><br>
-<%= t.label :image %>
+<%= t.label :image, "Image URL" %>
 <%= t.text_field :image %><br><br>
 <%= t.label "Category" %><br><br>
 <% Recipe.category_list.each do |category| %>
-<%= t.label category %>
+<%= t.label :category, category %>
 <%= t.radio_button(:category, category) %>
 <% end %><br><br>
 <%= t.fields_for :ingredients do |f| %>
-<%= f.label "Ingredient" %>
+<%= f.label :name, "Ingredient" %>
   <%= f.text_field :name %>
     <%= f.fields_for :recipe_ingredients do |g| %>
-  <%= g.label "Amount" %>
+  <%= g.label :quantity, "Amount" %>
   <%= g.text_field :quantity %><br>
   <% end %>
   <% end %><br><br>
