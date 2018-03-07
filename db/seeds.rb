@@ -215,3 +215,53 @@ ingredients_attributes:
 # Ingredient.create(name: "sea salt", quantity: "1/2 teaspoon"),
 # Ingredient.create(name: "brown sugar", quantity: "1 cup"),
 # Ingredient.create(name: "cornstarch", quantity: "1 tablespoon")]
+recipe12 = user.created_recipes.create(name: "Croissants", image:"https://images.media-allrecipes.com/userphotos/720x405/4674614.jpg", prep_time: 30, cook_time: 25, category: "Pastry", instructions: "Place warm water in the bowl of a stand mixer. Sprinkle with yeast. Let yeast dissolve for 10 minutes. Add sugar and bread flour. Sprinkle with salt; add 6 tablespoons butter. Attach the bowl to the stand mixer. Mix dough with the dough hook just until butter is completely kneaded in and the dough forms a ball and pulls away cleanly from the sides of the bowl, 3 or 4 minutes.
+Transfer dough to a work surface and form into a semi-smooth ball. Place dough back in the mixer bowl; cover. Let rise in a warm spot until doubled, about 2 hours.
+Transfer dough to a lightly floured work surface. Push and press dough to deflate it, and form it into a rectangle. Fold into thirds by lifting one end over the middle third, and folding the other side onto the middle. Wrap in plastic wrap. Place on a rimmed baking sheet lined with a silicone mat. Refrigerate until chilled through, about 1 hour.
+Cut 2 sticks butter in half lengthwise and place slightly apart from each other on a length of parchment paper long enough to fold over the butter. Fold the parchment paper over the butter. Press butter down. Roll out with a rolling pin to a square about 8x8 inches. Refrigerate until a little chilled and just barely flexible, 10 or 15 minutes.
+Roll dough out into a rectangle slightly wider than the butter slab and just over twice as long. Place butter on one half of the dough leaving about 1 inch margin from the edge of the dough. Fold the other half of the dough over the butter. Dust work surface and dough with flour as needed.
+Press rolling pin down on dough to create ridges. Then roll out the ridges. Repeat this process. Keep pressing and rolling until dough is about the same size rectangle as you had before you folded it in half, dusting with just a bit of flour as necessary.
+Starting from the short side, fold one-third of dough over middle third. Then fold the other end over to form a small rectangle. Flatten out just slightly with rolling pin. Transfer to the silicone-lined baking sheet; cover with plastic wrap. Refrigerate until chilled, about 30 minutes.",
+ingredients_attributes:
+  {0 => {name: "warm water", recipe_ingredients: {quantity: "1 cup"}},
+  1 => {name: "dry yeast", recipe_ingredients: {quantity: "1 package"}},
+  2 => {name: "granulated white sugar", recipe_ingredients: {quantity: "1/4 cup"}},
+  3 => {name: "unbleached bread flour", recipe_ingredients: {quantity: "3 1/2 cups"}},
+  4 => {name: "kosher salt", recipe_ingredients: {quantity: "3 teaspoons"}},
+  5 => {name: "butter", recipe_ingredients: {quantity: "6 tablespoons"}},
+  6 => {name: "egg", recipe_ingredients: {quantity: "1"}}})
+recipe13 = user2.created_recipes.create(name: "Danish Kringle", image:"https://images.media-allrecipes.com/userphotos/560x315/1989517.jpg", prep_time: 45, cook_time: 30, category: "Pastry", instructions: "In a large bowl, cut 1 cup butter into flour until crumbly, leaving pea-sized chunks. Stir in sour cream, and mix well; dough will be very sticky. Form dough into a ball. Cover tightly, and refrigerate 8 hours, or overnight.
+Preheat oven to 375 degrees F (190 degrees C). Lightly grease a baking sheet. Prepare the filling by combining 1 cup butter, brown sugar, and 1 cup chopped walnuts.
+Divide dough into three equal parts; return two parts to the refrigerator to keep cold. Quickly form 1/3 of the dough into a rectangle, and flour lightly. On a heavily floured surface, roll out to approximately 12x17 inches. Position lengthwise on the work surface. Along the long edges of the dough rectangle, use a sharp knife to cut 4 inch long angled lines about 1/2 inch apart. Spoon 1/3 of the filling along the length of the rectangle's uncut center. Alternating from one side of the dough to the other, fold each 1/2 inch wide strip towards the center, crisscrossing the filling in a braid-like fashion. Lightly press together the ends of the strips to seal. Sprinkle with 1/3 of the remaining walnuts. Repeat with remaining ingredients to form 3 braided danishes. Arrange danishes on prepared baking sheet.",
+  ingredients_attributes:
+    {0 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
+    1 => {name: "brown sugar", recipe_ingredients: {quantity: "2 cups"}},
+    2 => {name: "sour cream", recipe_ingredients: {quantity: "1 cup"}},
+    3 => {name: "chopped English walnuts", recipe_ingredients: {quantity: "1 1/2 cups"}},
+    4 => {name: "confectioners' sugar", recipe_ingredients: {quantity: "1 cup"}},
+    5 => {name: "water", recipe_ingredients: {quantity: "2 tablespoons"}},
+    6 => {name: "egg", recipe_ingredients: {quantity: "1"}}})
+recipe14 = user.created_recipes.create(name: "Bananas Foster", image:"https://static01.nyt.com/images/2017/01/20/dining/20COOKING-BANANAS-FOSTER2/20COOKING-BANANAS-FOSTER2-articleLarge.jpg", prep_time: 15, cook_time: 20, category: "Other", instructions: "Melt butter and sugar in a small frying pan. Add banana pieces and sauté over medium heat until lightly browned, turning pieces once. Sprinkle with cinnamon. Remove pan from heat.
+Add liqueur and rum to pan. To flambé, carefully light sauce with long-reach lighter. Spoon flaming sauce over the banana pieces until flame is extinguished.
+Serve warm banana pieces and sauce over vanilla ice cream.",
+  ingredients_attributes:
+    {0 => {name: "unsalted butter", recipe_ingredients: {quantity: "1 tablespoon"}},
+    1 => {name: "dark brown sugar", recipe_ingredients: {quantity: "2 teaspoons"}},
+    2 => {name: "banana", recipe_ingredients: {quantity: "1 peeled and halved"}},
+    3 => {name: "banana liqueur", recipe_ingredients: {quantity: "1 teaspoon"}},
+    4 => {name: "light rum", recipe_ingredients: {quantity: "1 ounce"}}})
+recipe15 = user.created_recipes.create(name: "Cherries Jubilee", image:"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2007/7/13/0/fruitdesserts_cherriesjubilee.jpg.rend.hgtvcom.616.462.suffix/1384784384886.jpeg", prep_time: 15, cook_time: 11, category: "Other", instructions: "Evenly scoop the ice cream into 4 dishes or decorative glasses and put in the freezer until ready to serve (this can be done up to 4 hours ahead).
+
+Wash and pit the cherries. Put the cherries and sugar in a large skillet. Peel 2 strips of zest from the lemon in wide strips with a peeler and add to the cherries. Squeeze the juice of half the lemon over the top. Stir to combine evenly. Cover and cook the cherries over medium-low heat until the sugar dissolves, about 4 minutes. Uncover and cook over medium-high until cherries get juicy, about 5 minutes more.
+
+To flambe the rum: If cooking over a gas flame, pull the pan off the heat and add the rum. Ignite the alcohol with a long match or one held with tongs. Swirl the pan slightly until the flames subside, about 30 seconds.
+
+If cooking over an electric stove, put the rum in a small saucepan. Warm it over medium-low heat and carefully light it with a long match or one held with tongs. Pour the lit rum over the cherries, and swirl the pan lightly until the flames subside, about 30 seconds.
+
+Ladle the cherries and their juices over prepared ice cream scoops. Serve immediately.",
+  ingredients_attributes:
+    {0 => {name: "vanilla ice cream", recipe_ingredients: {quantity: "1 pint"}},
+    1 => {name: "cherries", recipe_ingredients: {quantity: "1 pound"}},
+    2 => {name: "sugar", recipe_ingredients: {quantity: "1/2 cup"}},
+    3 => {name: "lemon", recipe_ingredients: {quantity: "1"}},
+    4 => {name: "golden rum", recipe_ingredients: {quantity: "1/3 cup"}}})
