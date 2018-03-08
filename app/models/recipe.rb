@@ -28,7 +28,8 @@ class Recipe < ApplicationRecord
         name = sanitize_ingredient_name(attributes[:name])
         ingredient = Ingredient.find_by(name: name)
           ingredient = Ingredient.create(name: name) if ingredient == nil
-          join = self.recipe_ingredients.build(ingredient_id: ingredient.id, quantity: attributes[:recipe_ingredients][:quantity])
+          #binding.pry
+          join = self.recipe_ingredients.build(ingredient_id: ingredient.id, quantity: attributes[:recipe_ingredients_attributes]["0"][:quantity])
           join.save
       end
 

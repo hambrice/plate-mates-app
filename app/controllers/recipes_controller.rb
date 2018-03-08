@@ -45,8 +45,9 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    #binding.pry
     (10 - @recipe.ingredients.count).times do
-      @recipe.ingredients.build
+      @recipe.ingredients.build.recipe_ingredients.build
       end
   end
 
@@ -75,7 +76,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :category, :prep_time, :cook_time, :instructions, :image, ingredients_attributes:[:name, recipe_ingredients:[:quantity]])
+    params.require(:recipe).permit(:name, :category, :prep_time, :cook_time, :instructions, :image, ingredients_attributes:[:name, recipe_ingredients_attributes:[:quantity]])
   end
 
   def require_login
