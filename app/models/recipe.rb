@@ -47,9 +47,4 @@ class Recipe < ApplicationRecord
     ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
   end
 
-  def ingredient_list
-    self.recipe_ingredients.collect do |ing|
-      ing.quantity + " " + ing.ingredient.name
-    end
-  end
 end

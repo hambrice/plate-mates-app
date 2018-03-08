@@ -8,7 +8,7 @@
 <img src="<%= recipe.image %>"><br><br>
 Prep Time: <strong><%= recipe.prep_time %></strong>
 Cook Time: <strong><%= recipe.cook_time %></strong><br><br>
-<% recipe.ingredient_list.each do |ing| %>
+<% ingredient_list(recipe).each do |ing| %>
 <%= ing %><br>
 <% end %><br><br>
 <%=recipe.instructions%>
