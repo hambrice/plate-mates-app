@@ -1,24 +1,23 @@
-# README
+# PlateMates
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Ruby on Rails application provides a resource for creating and editing your own recipes as well as viewing and keeping up with other recipes you might like.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+    $ git clone git@github.com:hambrice/plate-mates-app.git
 
-* System dependencies
+## Usage
+The the following line into terminal and follow the on-screen prompts.
 
-* Configuration
+    $ cd plate-mates-app
+    $ bundle install
+    $ rake db:seed
+    $ rails s
 
-* Database creation
+## Contributing
 
-* Database initialization
+Bug reports and pull requests are welcome on GitHub at https://github.com/hambrice/plate-mates-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

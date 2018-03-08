@@ -1,6 +1,6 @@
 <h2><%=@recipe.name %> </h2>
 <h3>Created by: <%=link_to @recipe.user.name, user_recipes_path(@recipe.user)%> </h3>
-<%= render partial: 'recipe_details', locals: {recipe: @recipe} %>
+<%= render partial: 'recipe_details', locals: {recipe: @recipe} %><br><br>
 
 <% if policy(@recipe).update? %>
 <%= link_to "Edit recipe", edit_recipe_path(@recipe) %>

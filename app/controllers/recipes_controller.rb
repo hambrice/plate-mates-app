@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
-
+  before_action :verify_creating_user, only: [:edit]
   def show
     @recipe = Recipe.find(params[:id])
   end
@@ -92,5 +92,9 @@ class RecipesController < ApplicationController
 
   def require_login
     return head(:forbidden) unless current_user
+  end
+
+  def verify_creating_user
+    return head(:forbidden) unless current_user == Recipe.find(params[:id]).user
   end
 end
