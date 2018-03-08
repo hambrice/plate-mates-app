@@ -35,6 +35,10 @@ class Recipe < ApplicationRecord
     end
   end
 
+   def self.search(recipe_array, query)
+     recipe_array.select {|s| s.name.downcase.include?(query.downcase)}
+   end
+
   def self.recently_created(amount)
     self.last(amount)
   end

@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
         current_user == User.find(params[:user_id]) ? @recipes = User.find(params[:user_id]).all_recipes : @recipes = User.find(params[:user_id]).created_recipes
       end
     elsif params[:query] != nil
-      @recipes = Recipe.all.select {|s| s.name.downcase.include?(params[:query].downcase)}
+      @recipes = Recipe.search(Recipe.all, params[:query])
     else
 
     @recipes = Recipe.all

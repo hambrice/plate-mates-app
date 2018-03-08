@@ -24,8 +24,6 @@ class User < ApplicationRecord
       self.created_recipes + self.liked_recipes
     end
 
-
-
     def recommended_recipes(quantity)
       if self.all_recipes.count > 0
         hash = {}
@@ -46,4 +44,13 @@ class User < ApplicationRecord
       array.delete_if{|x| x == nil} if array != nil
       #binding.pry
     end
+
+    def user_index(id)
+      if self == User.find(id)
+        self.all_recipes
+      else
+        self.created_recipes
+      end
+    end
+
 end

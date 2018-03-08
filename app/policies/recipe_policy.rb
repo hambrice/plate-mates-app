@@ -1,4 +1,5 @@
 class RecipePolicy < ApplicationPolicy
+
   def update?
     record.try(:user) == user
   end
