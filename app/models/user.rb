@@ -46,10 +46,11 @@ class User < ApplicationRecord
     end
 
     def user_index(id)
-      if self == User.find(id)
-        self.all_recipes
+      user = User.find(id)
+      if self == user
+        user.all_recipes
       else
-        self.created_recipes
+        user.created_recipes
       end
     end
 
