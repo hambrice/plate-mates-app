@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
   before_action :verify_creating_user, only: [:edit]
+
   def show
     @recipe = Recipe.find(params[:id])
   end

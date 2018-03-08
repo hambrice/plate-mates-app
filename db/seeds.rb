@@ -8,8 +8,7 @@
 Ingredient.destroy_all
 Recipe.destroy_all
 RecipeIngredient.destroy_all
-user = User.first
-user2 = User.last
+user = User.create(first_name: "Brad", last_name: "Hambrice", password:"tester", email: "hambrice@uab.edu")
 recipe1 = user.created_recipes.create(name: "Homemade Ice Cream", image:"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/6/27/1/FN_Homemade-Vanilla-Ice-Cream_s4x3.jpg.rend.hgtvcom.616.462.suffix/1403925376013.jpeg", prep_time: 120, cook_time: 20, category: "Frozen", instructions: "In a small pot, simmer heavy cream, milk, sugar and salt until sugar completely dissolves, about 5 minutes. Remove pot from heat. In a separate bowl, whisk yolks. Whisking constantly, slowly whisk about a third of the hot cream into the yolks, then whisk the yolk mixture back into the pot with the cream. Return pot to medium-low heat and gently cook until mixture is thick enough to coat the back of a spoon (about 170 degrees on an instant-read thermometer). Strain through a fine-mesh sieve into a bowl. Cool mixture to room temperature. Cover and chill at least 4 hours or overnight. Churn in an ice cream machine according to manufacturers’ instructions. Serve directly from the machine for soft serve, or store in freezer until needed.",
 ingredients_attributes:
   {0 => {name: "heavy cream", recipe_ingredients: {quantity: "2 cups"}},
@@ -230,7 +229,7 @@ ingredients_attributes:
   4 => {name: "kosher salt", recipe_ingredients: {quantity: "3 teaspoons"}},
   5 => {name: "butter", recipe_ingredients: {quantity: "6 tablespoons"}},
   6 => {name: "egg", recipe_ingredients: {quantity: "1"}}})
-recipe13 = user2.created_recipes.create(name: "Danish Kringle", image:"https://images.media-allrecipes.com/userphotos/560x315/1989517.jpg", prep_time: 45, cook_time: 30, category: "Pastry", instructions: "In a large bowl, cut 1 cup butter into flour until crumbly, leaving pea-sized chunks. Stir in sour cream, and mix well; dough will be very sticky. Form dough into a ball. Cover tightly, and refrigerate 8 hours, or overnight.
+recipe13 = user.created_recipes.create(name: "Danish Kringle", image:"https://images.media-allrecipes.com/userphotos/560x315/1989517.jpg", prep_time: 45, cook_time: 30, category: "Pastry", instructions: "In a large bowl, cut 1 cup butter into flour until crumbly, leaving pea-sized chunks. Stir in sour cream, and mix well; dough will be very sticky. Form dough into a ball. Cover tightly, and refrigerate 8 hours, or overnight.
 Preheat oven to 375 degrees F (190 degrees C). Lightly grease a baking sheet. Prepare the filling by combining 1 cup butter, brown sugar, and 1 cup chopped walnuts.
 Divide dough into three equal parts; return two parts to the refrigerator to keep cold. Quickly form 1/3 of the dough into a rectangle, and flour lightly. On a heavily floured surface, roll out to approximately 12x17 inches. Position lengthwise on the work surface. Along the long edges of the dough rectangle, use a sharp knife to cut 4 inch long angled lines about 1/2 inch apart. Spoon 1/3 of the filling along the length of the rectangle's uncut center. Alternating from one side of the dough to the other, fold each 1/2 inch wide strip towards the center, crisscrossing the filling in a braid-like fashion. Lightly press together the ends of the strips to seal. Sprinkle with 1/3 of the remaining walnuts. Repeat with remaining ingredients to form 3 braided danishes. Arrange danishes on prepared baking sheet.",
   ingredients_attributes:
@@ -265,7 +264,7 @@ Ladle the cherries and their juices over prepared ice cream scoops. Serve immedi
     2 => {name: "sugar", recipe_ingredients: {quantity: "1/2 cup"}},
     3 => {name: "lemon", recipe_ingredients: {quantity: "1"}},
     4 => {name: "golden rum", recipe_ingredients: {quantity: "1/3 cup"}}})
-recipe16 = user2.created_recipes.create(name: "Frozen Banana Bites", image:"https://images.media-allrecipes.com/userphotos/720x405/1245585.jpg", prep_time: 30, cook_time: 105, category: "Frozen", instructions: "Cover a baking sheet with waxed paper.
+recipe16 = user.created_recipes.create(name: "Frozen Banana Bites", image:"https://images.media-allrecipes.com/userphotos/720x405/1245585.jpg", prep_time: 30, cook_time: 105, category: "Frozen", instructions: "Cover a baking sheet with waxed paper.
 Spoon a thin layer of peanut butter on top of each banana slice. Insert a toothpick through the peanut butter layer into the banana. Place banana bites onto the prepared baking sheet; freeze for 30 minutes to overnight.
 Melt chocolate and shortening in the top of a double boiler over simmering water, stirring frequently and scraping down the sides with a rubber spatula to avoid scorching.
 Cover another baking sheet with waxed paper.
@@ -276,7 +275,7 @@ Remove 2 to 4 banana bites from the freezer at a time; coat each bite with choco
     2 => {name: "semisweet chocolate", recipe_ingredients: {quantity: "8 squares"}},
     3 => {name: "shortening", recipe_ingredients: {quantity: "1 tablespoon"}},
     4 => {name: "coffee baking bits", recipe_ingredients: {quantity: "1/3 cup"}}})
-recipe17 = user2.created_recipes.create(name: "Frozen Margarita Pie", image:"https://images.media-allrecipes.com/userphotos/720x405/5113746.jpg", prep_time: 15, cook_time: 5, category: "Frozen", instructions: "Preheat oven to 375 degrees F (190 degrees C).
+recipe17 = user.created_recipes.create(name: "Frozen Margarita Pie", image:"https://images.media-allrecipes.com/userphotos/720x405/5113746.jpg", prep_time: 15, cook_time: 5, category: "Frozen", instructions: "Preheat oven to 375 degrees F (190 degrees C).
 Mix pretzels and sugar together in a bowl; stir in margarine until evenly incorporated. Spoon mixture into a 9-inch pie plate; press into bottom and up sides of plate to form a firm, even crust.
 Bake crust in the preheated oven until edges are lightly browned, about 5 minutes. Cool on a wire rack.
 Mix sweetened condensed milk, limeade concentrate, tequila, orange liqueur, and green food coloring in a large bowl.
