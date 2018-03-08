@@ -10,7 +10,6 @@ class Recipe < ApplicationRecord
   validates :prep_time, presence: true
   validates :cook_time, presence: true
   validate :image_must_be_an_image_file_type
-  #accepts_nested_attributes_for :ingredients
 
   def image_must_be_an_image_file_type
     if !image.include?(".jpg") && !image.include?(".png") && !image.include?(".jpeg")
@@ -23,8 +22,6 @@ class Recipe < ApplicationRecord
   end
 
   def ingredients_attributes=(ingredients_attributes)
-    #ingredient = Ingredient.find_by(name:)
-    #self.ingredients.clear
     self.recipe_ingredients.clear
     ingredients_attributes.values.each do |attributes|
       unless attributes[:name].empty?
@@ -33,7 +30,6 @@ class Recipe < ApplicationRecord
           ingredient = Ingredient.create(name: name) if ingredient == nil
           join = self.recipe_ingredients.build(ingredient_id: ingredient.id, quantity: attributes[:recipe_ingredients][:quantity])
           join.save
-          #self.ingredients << ingredient
       end
 
     end
@@ -43,41 +39,9 @@ class Recipe < ApplicationRecord
     self.last(amount)
   end
 
-  # def ingredients_attributes=(ingredients_attributes)
-  #   ingredient = Ingredient.find_by(name:)
-  #   self.ingredients.clear
-  #   ingredients_attributes.values.each do |attributes|
-  #     ingredient = Ingredient.find_by(name: attributes[:name])
-  #     if ingredient
-  #       ingredient.update(quantity: attributes[:quantity])
-  #       self.ingredients << ingredient
-  #     else
-  #     self.ingredients.build(attributes) unless attributes[:name].empty?
-  #     end
-  #   end
-  # end
-
-
   def self.category_list
     ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
   end
-
-  def self.category_array(category)
-    self.all.select do |recipe|
-      recipe.category == category
-    end
-  end
-
-  def add_ingredient(name, quantity)
-    ingredient = Ingredient.find_by(name: name)
-    if ingredient
-      recipe_ingredient = self.recipe_ingredients.create(ingredient_id: ingredient.id, quantity: quantity)
-    else
-      ingredient = Ingredient.create(name: name)
-      recipe_ingredient = self.recipe_ingredients.create(ingredient_id: ingredient.id, quantity: quantity)
-    end
-      recipe_ingredient
-    end
 
   def ingredient_list
     self.recipe_ingredients.collect do |ing|

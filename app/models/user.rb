@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :liked_recipes, through: :likes, source: :recipe
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.first_name = auth.info.name.split(" ").first

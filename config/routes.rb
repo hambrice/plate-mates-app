@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :ingredients
   resources :recipes do
     resources :likes, only: [:create, :destroy]
   end

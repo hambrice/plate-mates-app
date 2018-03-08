@@ -9,10 +9,6 @@ class SiteController < ApplicationController
     @user = current_user
     @new_recipes = Recipe.first(3)
     @recommended_recipes = current_user.recommended_recipes(3)
-    #binding.pry
   end
 
-  # def show
-  #   @user = User.find(params[:id])
-  # end
 end
