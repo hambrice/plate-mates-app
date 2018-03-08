@@ -17,15 +17,11 @@
 <%= t.text_field :name %><br><br>
 <%= t.label :image, "Image URL" %>
 <%= t.text_field :image %><br><br>
-<%= t.label "Category" %><br><br>
-<% Recipe.category_list.each do |category| %>
-<%= t.label :category, category %>
-<%= t.radio_button(:category, category) %>
-<% end %><br><br>
+<%= t.label "Category" %>
+<%= t.collection_select :category, Recipe.category_list, :to_s, :to_s, include_blank: true%> <br><br>
 <%= t.fields_for :ingredients do |f| %>
 <%= f.label :name, "Ingredient" %>
   <%= f.text_field :name %>
-  <%= binding.pry %>
     <%= f.fields_for :recipe_ingredients do |g| %>
   <%= g.label :quantity, "Amount" %>
   <%= g.text_field :quantity %><br>
