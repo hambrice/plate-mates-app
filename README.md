@@ -11,6 +11,7 @@ The the following line into terminal and follow the on-screen prompts.
 
     $ cd plate-mates-app
     $ bundle install
+    $ rake db:migrate
     $ rake db:seed
     $ rails s
 

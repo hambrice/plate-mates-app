@@ -31,7 +31,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    raise params.inspect
     @recipe = current_user.created_recipes.build(recipe_params)
     if @recipe.save
       redirect_to recipe_path(@recipe)
@@ -46,7 +45,6 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    #binding.pry
     (10 - @recipe.ingredients.count).times do
       @recipe.ingredients.build.recipe_ingredients.build
       end
