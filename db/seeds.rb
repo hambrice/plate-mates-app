@@ -8,7 +8,6 @@
 Ingredient.destroy_all
 Recipe.destroy_all
 RecipeIngredient.destroy_all
-User.last.destroy
 user = User.create(first_name: "Brad", last_name: "Hambrice", password:"tester", email: "hambrice@supergmail.com")
 recipe1 = user.created_recipes.create(name: "Homemade Ice Cream", image:"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/6/27/1/FN_Homemade-Vanilla-Ice-Cream_s4x3.jpg.rend.hgtvcom.616.462.suffix/1403925376013.jpeg", prep_time: 120, cook_time: 20, category: "Frozen", instructions: "In a small pot, simmer heavy cream, milk, sugar and salt until sugar completely dissolves, about 5 minutes. Remove pot from heat. In a separate bowl, whisk yolks. Whisking constantly, slowly whisk about a third of the hot cream into the yolks, then whisk the yolk mixture back into the pot with the cream. Return pot to medium-low heat and gently cook until mixture is thick enough to coat the back of a spoon (about 170 degrees on an instant-read thermometer). Strain through a fine-mesh sieve into a bowl. Cool mixture to room temperature. Cover and chill at least 4 hours or overnight. Churn in an ice cream machine according to manufacturers’ instructions. Serve directly from the machine for soft serve, or store in freezer until needed.",
 ingredients_attributes:
@@ -45,13 +44,13 @@ Prepare cake batter and bake in 2 (9-inch) round pans as directed on package. Co
 Microwave chocolate and butter in small microwaveable bowl on HIGH 2 min. or until butter is melted. Stir until chocolate is completely melted. Cool 5 min. Meanwhile, beat cream cheese and sugar in large bowl with mixer until blended. Gently stir in COOL WHIP and crushed cookies.
 Place 1 cake layer on plate, spread with cream cheese mixture. Top with remaining cake layer. Spread top with chocolate glaze; let stand 10 min. or until firm. Keep refrigerated.",
 ingredients_attributes:
-  {0 => {name: "devil's food chocolate cake mix", recipe_ingredients: {quantity: "1 package"}},
-  1 => {name: "baker's semi-sweet chocolate", recipe_ingredients: {quantity: "4 squares"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "1/4 cup"}},
-  3 => {name: "sugar", recipe_ingredients: {quantity: "1/2 cup"}},
-  4 => {name: "cool whip whipped topping", recipe_ingredients: {quantity: "2 cups"}},
-  5 => {name: "oreo cookies,coarsely crushed", recipe_ingredients: {quantity: "12"}},
-  6 => {name: "cream cheese", recipe_ingredients: {quantity: "1 package"}}})
+  {0 => {name: "devil's food chocolate cake mix", recipe_ingredients_attributes: {"0" => {quantity: "1 package"}}},
+  1 => {name: "baker's semi-sweet chocolate", recipe_ingredients_attributes: {"0" => {quantity: "4 squares"}}},
+  2 => {name: "butter", recipe_ingredients_attributes: {"0" => {quantity: "1/4 cup"}}},
+  3 => {name: "sugar", recipe_ingredients_attributes: {"0" => {quantity: "1/2 cup"}}},
+  4 => {name: "cool whip whipped topping", recipe_ingredients_attributes: {"0" => {quantity: "2 cups"}}},
+  5 => {name: "oreo cookies,coarsely crushed", recipe_ingredients_attributes: {"0" => {quantity: "12"}}},
+  6 => {name: "cream cheese", recipe_ingredients_attributes: {"0" => {quantity: "1 package"}}}})
 # recipe3.ingredients = [
 # Ingredient.create(name: "devil's food chocolate cake mix", quantity: "1 package"),
 # Ingredient.create(name: "baker's semi-sweet chocolate", quantity: "4 squares"),
@@ -69,13 +68,13 @@ Pour 1/3 of the batter into the prepared pan and sprinkle with 1/2 of the choppe
 Bake at 350 degrees F (175 degrees C) for 55 to 60 minutes or until a knife inserted near the center comes out clean. Melt chocolate in the top of two double boilers or in bowls in the microwave. Stir until smooth. Set aside to cool.
 Let cake cool in pan for 10 minutes then remove from pan and let cool on a wire rack completely. Once cool place cake on a serving dish and drizzle with melted white and semisweet chocolate. Garnish with strawberries, if desired.",
   ingredients_attributes:
-    {0 => {name: "white sugar", recipe_ingredients: {quantity: "2 tablespoons"}},
-    1 => {name: "white chocolate", recipe_ingredients: {quantity: "8 squares"}},
-    2 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-    3 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-    4 => {name: "vanilla extract", recipe_ingredients: {quantity: "2 teaspoons"}},
-    5 => {name: "almond extract", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-    6 => {name: "flour", recipe_ingredients: {quantity: "3 cups"}}})
+    {0 => {name: "white sugar", recipe_ingredients_attributes: {"0" => {quantity: "2 tablespoons"}}},
+    1 => {name: "white chocolate", recipe_ingredients_attributes: {"0" => {quantity: "8 squares"}}},
+    2 => {name: "butter", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+    3 => {name: "eggs", recipe_ingredients_attributes: {"0" => {quantity: "2"}}},
+    4 => {name: "vanilla extract", recipe_ingredients_attributes: {"0" => {quantity: "2 teaspoons"}}},
+    5 => {name: "almond extract", recipe_ingredients_attributes: {"0" => {quantity: "1/2 teaspoon"}}},
+    6 => {name: "flour", recipe_ingredients_attributes: {"0" => {quantity: "3 cups"}}}})
 #recipe4.ingredients = [
 # Ingredient.create(name: "white sugar", quantity: "2 tablespoons"),
 # Ingredient.create(name: "white chocolate", quantity: "8 squares"),
@@ -89,13 +88,13 @@ recipe5 = user.created_recipes.create(name: "Chewy Sugar Cookies", image:"https:
 In a large bowl, cream together the margarine and 2 cups sugar until light and fluffy. Beat in the eggs one at a time, then the vanilla. Gradually stir in the dry ingredients until just blended. Roll the dough into walnut sized balls and roll the balls in remaining 1/4 cup of sugar. Place cookies 2 inches apart onto ungreased cookie sheets and flatten slightly.
 Bake for 8 to 10 minutes in the preheated oven, until lightly browned at the edges. Allow cookies to cool on baking sheet for 5 minutes before removing to a wire rack to cool completely.",
 ingredients_attributes:
-  {0 => {name: "flour", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "baking soda", recipe_ingredients: {quantity: "1 teaspoon"}},
-  2 => {name: "salt", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  3 => {name: "margarine", recipe_ingredients: {quantity: "1/4 cups"}},
-  4 => {name: "white sugar", recipe_ingredients: {quantity: "2 cups"}},
-  5 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  6 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
+  {0 => {name: "flour", recipe_ingredients_attributes: {"0" => {quantity: "2 tablespoons"}}},
+  1 => {name: "baking soda", recipe_ingredients_attributes: {"0" => {quantity: "1 teaspoon"}}},
+  2 => {name: "salt", recipe_ingredients_attributes: {"0" => {quantity: "1/2 teaspoon"}}},
+  3 => {name: "margarine", recipe_ingredients_attributes: {"0" => {quantity: "1/4 cups"}}},
+  4 => {name: "white sugar", recipe_ingredients_attributes: {"0" => {quantity: "2 cups"}}},
+  5 => {name: "eggs", recipe_ingredients_attributes: {"0" => {quantity: "2"}}},
+  6 => {name: "vanilla extract", recipe_ingredients_attributes: {"0" => {quantity: "3 teaspoons"}}}})
 #recipe5.ingredients = [
 # Ingredient.create(name: "flour", quantity: "2 cups"),
 # Ingredient.create(name: "baking soda", quantity: "1 teaspoon"),
@@ -109,13 +108,13 @@ recipe6 = user.created_recipes.create(name: "Breakfast Cookies", image:"https://
 Whisk oats, pastry flour, flax meal, cinnamon, salt, and baking soda together in a large bowl. Stir honey, egg whites, almond butter, and vanilla extract into oats mixture until dough is well-blended; mix in chocolate chips. Scoop dough into 36 balls and place on prepared baking sheets.
 Bake in the preheated oven until lightly golden and set, 8 to 10 minutes. Cool on the baking sheet for 10 minutes, lightly loosen each cookie from the baking sheet, and continue cooling on the baking sheets for another 10 minutes.",
 ingredients_attributes:
-  {0 => {name: "rolled oats", recipe_ingredients: {quantity: "2 cups"}},
-  1 => {name: "hole wheat pastry flour", recipe_ingredients: {quantity: "1 cup"}},
-  2 => {name: "flax seed meal", recipe_ingredients: {quantity: "1/2 cup"}},
-  3 => {name: "ground cinnamon", recipe_ingredients: {quantity: "2 teaspoons"}},
-  4 => {name: "sea salt", recipe_ingredients: {quantity: "2 teaspoons"}},
-  5 => {name: "eggs", recipe_ingredients: {quantity: "2"}},
-  6 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
+  {0 => {name: "rolled oats", recipe_ingredients_attributes: {"0" => {quantity: "2 cups"}}},
+  1 => {name: "hole wheat pastry flour", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+  2 => {name: "flax seed meal", recipe_ingredients_attributes: {"0" => {quantity: "1/2 cup"}}},
+  3 => {name: "ground cinnamon", recipe_ingredients_attributes: {"0" => {quantity: "2 teaspoons"}}},
+  4 => {name: "sea salt", recipe_ingredients_attributes: {"0" => {quantity: "2 teaspoons"}}},
+  5 => {name: "eggs", recipe_ingredients_attributes: {"0" => {quantity: "2"}}},
+  6 => {name: "vanilla extract", recipe_ingredients_attributes: {"0" => {quantity: "3 teaspoons"}}}})
 #recipe6.ingredients = [
 # Ingredient.create(name: "rolled oats", quantity: "2 cups"),
 # Ingredient.create(name: "whole wheat pastry flour", quantity: "1 cup"),
@@ -128,13 +127,13 @@ ingredients_attributes:
 recipe7 = user.created_recipes.create(name: "Pumpkin Pie", image:"https://www.simplyrecipes.com/wp-content/uploads/2014/11/pumpkin-pie-method-6-600x400.jpg", prep_time: 15, cook_time: 55, category: "Pie", instructions: "Preheat oven to 425 degrees F. Whisk pumpkin, sweetened condensed milk, eggs, spices and salt in medium bowl until smooth. Pour into crust. Bake 15 minutes.
 Reduce oven temperature to 350 degrees F and continue baking 35 to 40 minutes or until knife inserted 1 inch from crust comes out clean. Cool. Garnish as desired. Store leftovers covered in refrigerator.",
 ingredients_attributes:
-  {0 => {name: "pumpkin", recipe_ingredients: {quantity: "1 can"}},
-  1 => {name: "sweetened condensed milk", recipe_ingredients: {quantity: "1 can"}},
-  2 => {name: "ground ginger", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  3 => {name: "ground cinnamon", recipe_ingredients: {quantity: "1 teaspoon"}},
-  4 => {name: "sea salt", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  5 => {name: "large eggs", recipe_ingredients: {quantity: "2"}},
-  6 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
+  {0 => {name: "pumpkin", recipe_ingredients_attributes: {"0" => {quantity: "1 can"}}},
+  1 => {name: "sweetened condensed milk", recipe_ingredients_attributes: {"0" => {quantity: "1 can"}}},
+  2 => {name: "ground ginger", recipe_ingredients_attributes: {"0" => {quantity: "1/2 teaspoon"}}},
+  3 => {name: "ground cinnamon", recipe_ingredients_attributes: {"0" => {quantity: "1 teaspoon"}}},
+  4 => {name: "sea salt", recipe_ingredients_attributes: {"0" => {quantity: "1/2 teaspoon"}}},
+  5 => {name: "large eggs", recipe_ingredients_attributes: {"0" => {quantity: "2"}}},
+  6 => {name: "vanilla extract", recipe_ingredients_attributes: {"0" => {quantity: "3 teaspoons"}}}})
 #recipe7.ingredients = [
 # Ingredient.create(name: "pumpkin", quantity: "1 can"),
 # Ingredient.create(name: "sweetened condensed milk", quantity: "1 can"),
@@ -148,13 +147,13 @@ recipe8 = user.created_recipes.create(name: "Coconut Tarts", image:"https://love
 Beat the butter, sugar, egg, evaporated milk, and vanilla extract, mixing until fully combined. Stir in the coconut. Place 1/2 teaspoon of jam into each mini tart shell, and fill the shells with about 1 tablespoon of the coconut mixture.
 Bake in the preheated oven until the shells and topping are lightly golden brown, about 20 minutes. Cool on wire rack.",
 ingredients_attributes:
-  {0 => {name: "frozen mini tart shells", recipe_ingredients: {quantity: "12"}},
-  1 => {name: "melted butter", recipe_ingredients: {quantity: "1/4 cup"}},
-  2 => {name: "white sugar", recipe_ingredients: {quantity: "1/2 cup"}},
-  3 => {name: "ground cinnamon", recipe_ingredients: {quantity: "1 teaspoon"}},
-  4 => {name: "sea salt", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  5 => {name: "large eggs", recipe_ingredients: {quantity: "2"}},
-  6 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
+  {0 => {name: "frozen mini tart shells", recipe_ingredients_attributes: {"0" => {quantity: "12"}}},
+  1 => {name: "melted butter", recipe_ingredients_attributes: {"0" => {quantity: "1/4 cup"}}},
+  2 => {name: "white sugar", recipe_ingredients_attributes: {"0" => {quantity: "1/2 cup"}}},
+  3 => {name: "ground cinnamon", recipe_ingredients_attributes: {"0" => {quantity: "1 teaspoon"}}},
+  4 => {name: "sea salt", recipe_ingredients_attributes: {"0" => {quantity: "1/2 teaspoon"}}},
+  5 => {name: "large eggs", recipe_ingredients_attributes: {"0" => {quantity: "2"}}},
+  6 => {name: "vanilla extract", recipe_ingredients_attributes: {"0" => {quantity: "3 teaspoons"}}}})
 # recipe8.ingredients = [
 # Ingredient.create(name: "frozen mini tart shells", quantity: "12"),
 # Ingredient.create(name: "melted butter", quantity: "1/4 cup"),
@@ -168,12 +167,12 @@ recipe9 = user.created_recipes.create(name: "Chocolate Fudge", image: "https://a
 Spread evenly into wax-paper-lined 8- or 9-inch square pan. Chill 2 hours or until firm.
 Life fudge out of pan and place onto cutting board; peel off paper and cut into squares. Store covered in refrigerator.",
 ingredients_attributes:
-  {0 => {name: "semi-sweet chocolate chips", recipe_ingredients: {quantity: "3 cups"}},
-  1 => {name: "sweetened condensed milk", recipe_ingredients: {quantity: "1 can"}},
-  2 => {name: "chopped nuts", recipe_ingredients: {quantity: "3/4 cups"}},
-  3 => {name: "ground cinnamon", recipe_ingredients: {quantity: "1 teaspoon"}},
-  4 => {name: "sea salt", recipe_ingredients: {quantity: "1/2 teaspoons"}},
-  5 => {name: "vanilla extract", recipe_ingredients: {quantity: "3 teaspoons"}}})
+  {0 => {name: "semi-sweet chocolate chips", recipe_ingredients_attributes: {"0" => {quantity: "3 cups"}}},
+  1 => {name: "sweetened condensed milk", recipe_ingredients_attributes: {"0" => {quantity: "1 can"}}},
+  2 => {name: "chopped nuts", recipe_ingredients_attributes: {"0" => {quantity: "3/4 cups"}}},
+  3 => {name: "ground cinnamon", recipe_ingredients_attributes: {"0" => {quantity: "1 teaspoon"}}},
+  4 => {name: "sea salt", recipe_ingredients_attributes: {"0" => {quantity: "1/2 teaspoons"}}},
+  5 => {name: "vanilla extract", recipe_ingredients_attributes: {"0" => {quantity: "3 teaspoons"}}}})
 # recipe9.ingredients = [
 # Ingredient.create(name: "semi-sweet chocolate chips", quantity: "3 cups"),
 # Ingredient.create(name: "sweetened condensed milk", quantity: "1 can"),
@@ -186,9 +185,9 @@ recipe10 = user.created_recipes.create(name: "Pretzel Turtles", image:"https://p
 Arrange the pretzels in a single layer on a parchment lined cookie sheet. Place one chocolate covered caramel candy on each pretzel.
 Bake for 4 minutes. While the candy is warm, press a pecan half onto each candy covered pretzel. Cool completely before storing in an airtight container.",
 ingredients_attributes:
-  {0 => {name: "small mini pretzels", recipe_ingredients: {quantity: "20"}},
-  1 => {name: "chocolate covered caramel candies", recipe_ingredients: {quantity: "20"}},
-  2 => {name: "pecan halves", recipe_ingredients: {quantity: "20"}}})
+  {0 => {name: "small mini pretzels", recipe_ingredients_attributes: {"0" => {quantity: "20"}}},
+  1 => {name: "chocolate covered caramel candies", recipe_ingredients_attributes: {"0" => {quantity: "20"}}},
+  2 => {name: "pecan halves", recipe_ingredients_attributes: {"0" => {quantity: "20"}}}})
 # recipe10.ingredients = [
 # Ingredient.create(name: "small mini pretzels", quantity: "20"),
 # Ingredient.create(name: "chocolate covered caramel candies", quantity: "20"),
@@ -201,13 +200,13 @@ Unfold puff pastry sheets, and repair any cracks by pressing them back together.
 Bake for 25 minutes in the preheated oven, until turnovers are puffed and lightly browned. Cool completely before glazing.
 To make the glaze, mix together the confectioners' sugar, milk and vanilla in a small bowl. Adjust the thickness by adding more sugar or milk if necessary. Drizzle glaze over the cooled turnovers.",
 ingredients_attributes:
-  {0 => {name: "lemon juice", recipe_ingredients: {quantity: "2 tablespoons"}},
-  1 => {name: "water", recipe_ingredients: {quantity: "4 cups"}},
-  2 => {name: "butter", recipe_ingredients: {quantity: "2 tablespoons"}},
-  3 => {name: "Granny Smith apples", recipe_ingredients: {quantity: "4"}},
-  4 => {name: "sea salt", recipe_ingredients: {quantity: "1/2 teaspoon"}},
-  5 => {name: "brown sugar", recipe_ingredients: {quantity: "1 cup"}},
-  6 => {name: "cornstarch", recipe_ingredients: {quantity: "1 tablespoon"}}})
+  {0 => {name: "lemon juice", recipe_ingredients_attributes: {"0" => {quantity: "2 tablespoons"}}},
+  1 => {name: "water", recipe_ingredients_attributes: {"0" => {quantity: "4 cups"}}},
+  2 => {name: "butter", recipe_ingredients_attributes: {"0" => {quantity: "2 tablespoons"}}},
+  3 => {name: "Granny Smith apples", recipe_ingredients_attributes: {"0" => {quantity: "4"}}},
+  4 => {name: "sea salt", recipe_ingredients_attributes: {"0" => {quantity: "1/2 teaspoon"}}},
+  5 => {name: "brown sugar", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+  6 => {name: "cornstarch", recipe_ingredients_attributes: {"0" => {quantity: "1 tablespoon"}}}})
 # recipe11.ingredients = [
 # Ingredient.create(name: "lemon juice", quantity: "2 tablespoons"),
 # Ingredient.create(name: "water", quantity: "4 cups"),
@@ -224,33 +223,33 @@ Roll dough out into a rectangle slightly wider than the butter slab and just ove
 Press rolling pin down on dough to create ridges. Then roll out the ridges. Repeat this process. Keep pressing and rolling until dough is about the same size rectangle as you had before you folded it in half, dusting with just a bit of flour as necessary.
 Starting from the short side, fold one-third of dough over middle third. Then fold the other end over to form a small rectangle. Flatten out just slightly with rolling pin. Transfer to the silicone-lined baking sheet; cover with plastic wrap. Refrigerate until chilled, about 30 minutes.",
 ingredients_attributes:
-  {0 => {name: "warm water", recipe_ingredients: {quantity: "1 cup"}},
-  1 => {name: "dry yeast", recipe_ingredients: {quantity: "1 package"}},
-  2 => {name: "granulated white sugar", recipe_ingredients: {quantity: "1/4 cup"}},
-  3 => {name: "unbleached bread flour", recipe_ingredients: {quantity: "3 1/2 cups"}},
-  4 => {name: "kosher salt", recipe_ingredients: {quantity: "3 teaspoons"}},
-  5 => {name: "butter", recipe_ingredients: {quantity: "6 tablespoons"}},
-  6 => {name: "egg", recipe_ingredients: {quantity: "1"}}})
+  {0 => {name: "warm water", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+  1 => {name: "dry yeast", recipe_ingredients_attributes: {"0" => {quantity: "1 package"}}},
+  2 => {name: "granulated white sugar", recipe_ingredients_attributes: {"0" => {quantity: "1/4 cup"}}},
+  3 => {name: "unbleached bread flour", recipe_ingredients_attributes: {"0" => {quantity: "3 1/2 cups"}}},
+  4 => {name: "kosher salt", recipe_ingredients_attributes: {"0" => {quantity: "3 teaspoons"}}},
+  5 => {name: "butter", recipe_ingredients_attributes: {"0" => {quantity: "6 tablespoons"}}},
+  6 => {name: "egg", recipe_ingredients_attributes: {"0" => {quantity: "1"}}}})
 recipe13 = user.created_recipes.create(name: "Danish Kringle", image:"https://images.media-allrecipes.com/userphotos/560x315/1989517.jpg", prep_time: 45, cook_time: 30, category: "Pastry", instructions: "In a large bowl, cut 1 cup butter into flour until crumbly, leaving pea-sized chunks. Stir in sour cream, and mix well; dough will be very sticky. Form dough into a ball. Cover tightly, and refrigerate 8 hours, or overnight.
 Preheat oven to 375 degrees F (190 degrees C). Lightly grease a baking sheet. Prepare the filling by combining 1 cup butter, brown sugar, and 1 cup chopped walnuts.
 Divide dough into three equal parts; return two parts to the refrigerator to keep cold. Quickly form 1/3 of the dough into a rectangle, and flour lightly. On a heavily floured surface, roll out to approximately 12x17 inches. Position lengthwise on the work surface. Along the long edges of the dough rectangle, use a sharp knife to cut 4 inch long angled lines about 1/2 inch apart. Spoon 1/3 of the filling along the length of the rectangle's uncut center. Alternating from one side of the dough to the other, fold each 1/2 inch wide strip towards the center, crisscrossing the filling in a braid-like fashion. Lightly press together the ends of the strips to seal. Sprinkle with 1/3 of the remaining walnuts. Repeat with remaining ingredients to form 3 braided danishes. Arrange danishes on prepared baking sheet.",
   ingredients_attributes:
-    {0 => {name: "butter", recipe_ingredients: {quantity: "1 cup"}},
-    1 => {name: "brown sugar", recipe_ingredients: {quantity: "2 cups"}},
-    2 => {name: "sour cream", recipe_ingredients: {quantity: "1 cup"}},
-    3 => {name: "chopped English walnuts", recipe_ingredients: {quantity: "1 1/2 cups"}},
-    4 => {name: "confectioners' sugar", recipe_ingredients: {quantity: "1 cup"}},
-    5 => {name: "water", recipe_ingredients: {quantity: "2 tablespoons"}},
-    6 => {name: "egg", recipe_ingredients: {quantity: "1"}}})
+    {0 => {name: "butter", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+    1 => {name: "brown sugar", recipe_ingredients_attributes: {"0" => {quantity: "2 cups"}}},
+    2 => {name: "sour cream", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+    3 => {name: "chopped English walnuts", recipe_ingredients_attributes: {"0" => {quantity: "1 1/2 cups"}}},
+    4 => {name: "confectioners' sugar", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+    5 => {name: "water", recipe_ingredients_attributes: {"0" => {quantity: "2 tablespoons"}}},
+    6 => {name: "egg", recipe_ingredients_attributes: {"0" => {quantity: "1"}}}})
 recipe14 = user.created_recipes.create(name: "Bananas Foster", image:"https://static01.nyt.com/images/2017/01/20/dining/20COOKING-BANANAS-FOSTER2/20COOKING-BANANAS-FOSTER2-articleLarge.jpg", prep_time: 15, cook_time: 20, category: "Other", instructions: "Melt butter and sugar in a small frying pan. Add banana pieces and sauté over medium heat until lightly browned, turning pieces once. Sprinkle with cinnamon. Remove pan from heat.
 Add liqueur and rum to pan. To flambé, carefully light sauce with long-reach lighter. Spoon flaming sauce over the banana pieces until flame is extinguished.
 Serve warm banana pieces and sauce over vanilla ice cream.",
   ingredients_attributes:
-    {0 => {name: "unsalted butter", recipe_ingredients: {quantity: "1 tablespoon"}},
-    1 => {name: "dark brown sugar", recipe_ingredients: {quantity: "2 teaspoons"}},
-    2 => {name: "banana", recipe_ingredients: {quantity: "1 peeled and halved"}},
-    3 => {name: "banana liqueur", recipe_ingredients: {quantity: "1 teaspoon"}},
-    4 => {name: "light rum", recipe_ingredients: {quantity: "1 ounce"}}})
+    {0 => {name: "unsalted butter", recipe_ingredients_attributes: {"0" => {quantity: "1 tablespoon"}}},
+    1 => {name: "dark brown sugar", recipe_ingredients_attributes: {"0" => {quantity: "2 teaspoons"}}},
+    2 => {name: "banana", recipe_ingredients_attributes: {"0" => {quantity: "1 peeled and halved"}}},
+    3 => {name: "banana liqueur", recipe_ingredients_attributes: {"0" => {quantity: "1 teaspoon"}}},
+    4 => {name: "light rum", recipe_ingredients_attributes: {"0" => {quantity: "1 ounce"}}}})
 recipe15 = user.created_recipes.create(name: "Cherries Jubilee", image:"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2007/7/13/0/fruitdesserts_cherriesjubilee.jpg.rend.hgtvcom.616.462.suffix/1384784384886.jpeg", prep_time: 15, cook_time: 11, category: "Other", instructions: "Evenly scoop the ice cream into 4 dishes or decorative glasses and put in the freezer until ready to serve (this can be done up to 4 hours ahead).
 
 Wash and pit the cherries. Put the cherries and sugar in a large skillet. Peel 2 strips of zest from the lemon in wide strips with a peeler and add to the cherries. Squeeze the juice of half the lemon over the top. Stir to combine evenly. Cover and cook the cherries over medium-low heat until the sugar dissolves, about 4 minutes. Uncover and cook over medium-high until cherries get juicy, about 5 minutes more.
@@ -261,22 +260,22 @@ If cooking over an electric stove, put the rum in a small saucepan. Warm it over
 
 Ladle the cherries and their juices over prepared ice cream scoops. Serve immediately.",
   ingredients_attributes:
-    {0 => {name: "vanilla ice cream", recipe_ingredients: {quantity: "1 pint"}},
-    1 => {name: "cherries", recipe_ingredients: {quantity: "1 pound"}},
-    2 => {name: "sugar", recipe_ingredients: {quantity: "1/2 cup"}},
-    3 => {name: "lemon", recipe_ingredients: {quantity: "1"}},
-    4 => {name: "golden rum", recipe_ingredients: {quantity: "1/3 cup"}}})
+    {0 => {name: "vanilla ice cream", recipe_ingredients_attributes: {"0" => {quantity: "1 pint"}}},
+    1 => {name: "cherries", recipe_ingredients_attributes: {"0" => {quantity: "1 pound"}}},
+    2 => {name: "sugar", recipe_ingredients_attributes: {"0" => {quantity: "1/2 cup"}}},
+    3 => {name: "lemon", recipe_ingredients_attributes: {"0" => {quantity: "1"}}},
+    4 => {name: "golden rum", recipe_ingredients_attributes: {"0" => {quantity: "1/3 cup"}}}})
 recipe16 = user.created_recipes.create(name: "Frozen Banana Bites", image:"https://images.media-allrecipes.com/userphotos/720x405/1245585.jpg", prep_time: 30, cook_time: 105, category: "Frozen", instructions: "Cover a baking sheet with waxed paper.
 Spoon a thin layer of peanut butter on top of each banana slice. Insert a toothpick through the peanut butter layer into the banana. Place banana bites onto the prepared baking sheet; freeze for 30 minutes to overnight.
 Melt chocolate and shortening in the top of a double boiler over simmering water, stirring frequently and scraping down the sides with a rubber spatula to avoid scorching.
 Cover another baking sheet with waxed paper.
 Remove 2 to 4 banana bites from the freezer at a time; coat each bite with chocolate mixture. Place coated banana bites on the second baking sheet; sprinkle each with toffee bits. Repeat until all the bites are coated. Return banana bites to freezer until set, at least 1 hour. Allow bites to sit in room temperature for about 15 minutes before serving.",
   ingredients_attributes:
-    {0 => {name: "peanut butter", recipe_ingredients: {quantity: "1 cup"}},
-    1 => {name: "bananas", recipe_ingredients: {quantity: "4"}},
-    2 => {name: "semisweet chocolate", recipe_ingredients: {quantity: "8 squares"}},
-    3 => {name: "shortening", recipe_ingredients: {quantity: "1 tablespoon"}},
-    4 => {name: "coffee baking bits", recipe_ingredients: {quantity: "1/3 cup"}}})
+    {0 => {name: "peanut butter", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+    1 => {name: "bananas", recipe_ingredients_attributes: {"0" => {quantity: "4"}}},
+    2 => {name: "semisweet chocolate", recipe_ingredients_attributes: {"0" => {quantity: "8 squares"}}},
+    3 => {name: "shortening", recipe_ingredients_attributes: {"0" => {quantity: "1 tablespoon"}}},
+    4 => {name: "coffee baking bits", recipe_ingredients_attributes: {"0" => {quantity: "1/3 cup"}}}})
 recipe17 = user.created_recipes.create(name: "Frozen Margarita Pie", image:"https://images.media-allrecipes.com/userphotos/720x405/5113746.jpg", prep_time: 15, cook_time: 5, category: "Frozen", instructions: "Preheat oven to 375 degrees F (190 degrees C).
 Mix pretzels and sugar together in a bowl; stir in margarine until evenly incorporated. Spoon mixture into a 9-inch pie plate; press into bottom and up sides of plate to form a firm, even crust.
 Bake crust in the preheated oven until edges are lightly browned, about 5 minutes. Cool on a wire rack.
@@ -284,11 +283,11 @@ Mix sweetened condensed milk, limeade concentrate, tequila, orange liqueur, and 
 Beat cream in a glass or metal bowl until soft peaks form. Lift your beater or whisk straight up: the whipped cream will form soft mounds rather than a sharp peak. Fold whipped cream into sweetened condensed milk mixture. Spoon filling into cooled crust.
 Cover pie with plastic wrap and freeze until firm, about 4 hours. Let stand for 10 minutes before serving; garnish with lime slices.",
   ingredients_attributes:
-    {0 => {name: "pretzels", recipe_ingredients: {quantity: "1 cup"}},
-    1 => {name: "white sugar", recipe_ingredients: {quantity: "1/4 cup"}},
-    2 => {name: "margarine", recipe_ingredients: {quantity: "1/3 cup"}},
-    3 => {name: "sweetened condensed milk", recipe_ingredients: {quantity: "1 can"}},
-    4 => {name: "tequila", recipe_ingredients: {quantity: "2 tablespoons"}},
-    5 => {name: "orange liqueur", recipe_ingredients: {quantity: "1 tablespoon"}},
-    6 => {name: "heavy whipping cream", recipe_ingredients: {quantity: "1 cup"}},
-    7 => {name: "frozen limeade", recipe_ingredients: {quantity: "1/3 cup"}}})
+    {0 => {name: "pretzels", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+    1 => {name: "white sugar", recipe_ingredients_attributes: {"0" => {quantity: "1/4 cup"}}},
+    2 => {name: "margarine", recipe_ingredients_attributes: {"0" => {quantity: "1/3 cup"}}},
+    3 => {name: "sweetened condensed milk", recipe_ingredients_attributes: {"0" => {quantity: "1 can"}}},
+    4 => {name: "tequila", recipe_ingredients_attributes: {"0" => {quantity: "2 tablespoons"}}},
+    5 => {name: "orange liqueur", recipe_ingredients_attributes: {"0" => {quantity: "1 tablespoon"}}},
+    6 => {name: "heavy whipping cream", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+    7 => {name: "frozen limeade", recipe_ingredients_attributes: {"0" => {quantity: "1/3 cup"}}}})
