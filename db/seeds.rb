@@ -8,30 +8,32 @@
 Ingredient.destroy_all
 Recipe.destroy_all
 RecipeIngredient.destroy_all
-user = User.create(first_name: "Brad", last_name: "Hambrice", password:"tester", email: "hambrice@uab.edu")
+User.last.destroy
+user = User.create(first_name: "Brad", last_name: "Hambrice", password:"tester", email: "hambrice@supergmail.com")
 recipe1 = user.created_recipes.create(name: "Homemade Ice Cream", image:"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/6/27/1/FN_Homemade-Vanilla-Ice-Cream_s4x3.jpg.rend.hgtvcom.616.462.suffix/1403925376013.jpeg", prep_time: 120, cook_time: 20, category: "Frozen", instructions: "In a small pot, simmer heavy cream, milk, sugar and salt until sugar completely dissolves, about 5 minutes. Remove pot from heat. In a separate bowl, whisk yolks. Whisking constantly, slowly whisk about a third of the hot cream into the yolks, then whisk the yolk mixture back into the pot with the cream. Return pot to medium-low heat and gently cook until mixture is thick enough to coat the back of a spoon (about 170 degrees on an instant-read thermometer). Strain through a fine-mesh sieve into a bowl. Cool mixture to room temperature. Cover and chill at least 4 hours or overnight. Churn in an ice cream machine according to manufacturers’ instructions. Serve directly from the machine for soft serve, or store in freezer until needed.",
 ingredients_attributes:
-  {0 => {name: "heavy cream", recipe_ingredients: {quantity: "2 cups"}},
-  1 => {name: "whole milk", recipe_ingredients: {quantity: "1 cup"}},
-  2 => {name: "sugar", recipe_ingredients: {quantity: "2/3 cups"}},
-  3 => {name: "sea salt", recipe_ingredients: {quantity: "1/8 teaspoon"}},
-  4 => {name: "large egg yolks", recipe_ingredients: {quantity: "6"}}})
+  {0 => {name: "heavy cream", recipe_ingredients_attributes: {"0" => {quantity: "2 cups"}}},
+  1 => {name: "whole milk", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+  2 => {name: "sugar", recipe_ingredients_attributes: {"0" => {quantity: "2/3 cups"}}},
+  3 => {name: "sea salt", recipe_ingredients_attributes: {"0" => {quantity: "1/8 teaspoon"}}},
+  4 => {name: "large egg yolks", recipe_ingredients_attributes: {"0" => {quantity: "6"}}}})
+
 # recipe1.ingredients = [
 # Ingredient.create(name: "heavy cream", quantity: "2 cups"),
 # Ingredient.create(name: "whole milk", quantity: "1 cup"),
 # Ingredient.create(name: "sugar", quantity: "2/3 cup"),
 # Ingredient.create(name: "sea salt", quantity: "1/8 teaspoon"),
 # Ingredient.create(name: "large egg yolks", quantity: "6")]
-
+#
 recipe2 = user.created_recipes.create(name: "Homemade Gelato", image:"https://i.ytimg.com/vi/LVtRrvmSJ8M/maxresdefault.jpg", prep_time: 60, cook_time: 120, category: "Frozen", instructions: "In a medium saucepan, mix milk and cream. Warm until foam forms around the edges. Remove from heat.
 In a large bowl, beat the egg yolks and sugar until frothy. Gradually pour the warm milk into the egg yolks, whisking constantly. Return mixture to saucepan; cook over medium heat, stirring with a wooden spoon until the mixture gels slightly and coats the back of the spoon. If small egg lumps begin to show, remove from heat immediately.
 Pour the mixture through a sieve or fine strainer into a bowl. Cover, and chill for several hours or overnight.
 Pour the mixture into an ice cream maker, and freeze according to the manufacturer's instructions. Transfer to a sealed container, and freeze until firm. If the gelato is too firm, place it in the refrigerator until it reaches the desired consistency.",
 ingredients_attributes:
-  {0 => {name: "heavy cream", recipe_ingredients: {quantity: "1 cup"}},
-  1 => {name: "whole milk", recipe_ingredients: {quantity: "2 cups"}},
-  2 => {name: "sugar", recipe_ingredients: {quantity: "1/4 cup"}},
-  3 => {name: "large egg yolks", recipe_ingredients: {quantity: "4"}}})
+  {0 => {name: "heavy cream", recipe_ingredients_attributes: {"0" => {quantity: "1 cup"}}},
+  1 => {name: "whole milk", recipe_ingredients_attributes: {"0" => {quantity: "2 cups"}}},
+  2 => {name: "sugar", recipe_ingredients_attributes: {"0" => {quantity: "1/4 cup"}}},
+  3 => {name: "large egg yolks", recipe_ingredients_attributes: {"0" => {quantity: "4"}}}})
 # recipe2.ingredients = [
 # Ingredient.create(name: "heavy cream", quantity: "1 cup"),
 # Ingredient.create(name: "whole milk", quantity: "2 cup"),

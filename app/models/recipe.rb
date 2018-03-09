@@ -22,19 +22,27 @@ class Recipe < ApplicationRecord
   end
 
   def ingredients_attributes=(ingredients_attributes)
-    self.recipe_ingredients.clear
+    #self.recipe_ingredients.clear
     ingredients_attributes.values.each do |attributes|
       unless attributes[:name].empty?
         name = sanitize_ingredient_name(attributes[:name])
         ingredient = Ingredient.find_by(name: name)
-          ingredient = Ingredient.create(name: name) if ingredient == nil
+        ingredient = Ingredient.create(name: name) if ingredient == nil
           #binding.pry
-          join = self.recipe_ingredients.build(ingredient_id: ingredient.id, quantity: attributes[:recipe_ingredients_attributes]["0"][:quantity])
+          if self.persisted?
+            join = RecipeIngredient.find_by(recipe_id: self.id, ingredient_id: ingredient.id)
+            if join
+              join.quantity = attributes[:recipe_ingredients_attributes]["0"][:quantity]
+            else
+              join = self.recipe_ingredients.build(ingredient_id: ingredient.id, quantity: attributes[:recipe_ingredients_attributes]["0"][:quantity])
+            end
+          else
+            join = self.recipe_ingredients.build(ingredient_id: ingredient.id, quantity: attributes[:recipe_ingredients_attributes]["0"][:quantity])
+          end
           join.save
+        end
       end
-
     end
-  end
 
    def self.search(recipe_array, query)
      recipe_array.select {|s| s.name.downcase.include?(query.downcase)}
