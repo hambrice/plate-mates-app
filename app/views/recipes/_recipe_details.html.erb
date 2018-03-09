@@ -1,4 +1,5 @@
-<% if current_user && current_user == recipe.user %>
+
+<% if current_user && current_user != recipe.user %>
   <% if current_user.liked_recipes.include?(recipe) %>
     <%= link_to "Remove this recipe from saved list", recipe_like_path(recipe), method: "delete" %><br><br>
   <% else %>
