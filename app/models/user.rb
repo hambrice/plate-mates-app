@@ -24,22 +24,32 @@ class User < ApplicationRecord
       self.created_recipes + self.liked_recipes
     end
 
-    def favorite_category
+    def favorite_categories
         hash = {}
         Recipe.category_list.each do |category|
           hash[category] = 0
           self.all_recipes.each {|r| hash[category] += 1 if r.category == category}
           #binding.pry
         end
-        favorite_category = hash.sort_by{|category, amount| amount}.last[0]
+        favorite_categories = hash.sort_by{|category, amount| -amount}.first(3)
+        #binding.pry
     end
 
     def recommended_recipes(quantity)
       if self.all_recipes.count > 0
         array = []
+        array2=[]
+        self.favorite_categories.each do |category_array|
+          #binding.pry
+          category_array[1].times do
+            array2 << (category_array[0])
+            #binding.pry
+          end
+        end
         quantity.times do
+          random_category = array2.sample
           array << Recipe.all.shuffle.detect do |recipe|
-            recipe.category == self.favorite_category && !array.include?(recipe) && !self.all_recipes.include?(recipe)
+            recipe.category == random_category && !array.include?(recipe) && !self.all_recipes.include?(recipe)
             #binding.pry
           end
         end

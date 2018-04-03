@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :recipes do
     resources :likes, only: [:create, :destroy]
+    resources :comments
   end
   #resources :likes, only: [:create, :destroy]
   #post 'recipes/:id/like', to: 'recipes#like', as: 'like_recipe'
