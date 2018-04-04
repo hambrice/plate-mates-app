@@ -5,7 +5,10 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    render json: @recipe
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @recipe }
+    end
   end
 
   def index

@@ -1,8 +1,44 @@
 <h2><%=@recipe.name %> </h2>
 <h3>Created by: <%=link_to @recipe.user.name, user_recipes_path(@recipe.user)%> </h3>
+<a href="#" class="js-next" data-id="<%=@recipe.id%>">Next...</a> <br>
 <%= render partial: 'recipe_details', locals: {recipe: @recipe} %><br><br>
 
 <% if policy(@recipe).update? %>
 <%= link_to "Edit recipe", edit_recipe_path(@recipe) %>
 <%= link_to "Delete recipe", "/recipes/#{@recipe.id}", method: "delete" %>
 <% end %>
+<script type="text/javascript" charset="utf-8">
+let store = {recipes:[], ingredients:[], recipe_ingredients:[]}
+class Recipe {
+  constructor(recipe) {
+    this.name = recipe.name
+    this.prepTime = recipe.prep_time
+    this.cookTime = recipe.cook_time
+    this.instructions = recipe.instructions
+  }
+}
+class Ingredients {
+  constructor(name) {
+    this.name = name
+  }
+}
+class RecipeIngredients {
+  constructor(quantity, recipe, ingredient) {
+    this.quantity = quantity
+    this.recipeId = recipe.id
+    this.ingredientId = ingredient.id
+  }
+}
+$(function () {
+  $(".js-next").on('click', function(e) {
+    e.preventDefault();
+    let id = $(this).attr("data-id")
+    //debugger;
+    $.getJSON(`/recipes/${id}`, function(recipe) {
+      recipe1 = new Recipe(recipe)
+      debugger;
+
+    })
+  })
+})
+</script>

@@ -7,9 +7,10 @@
   <% end %>
 <% end %>
 <img src="<%= recipe.image %>"><br><br>
-Prep Time: <strong><%= recipe.prep_time %></strong>
-Cook Time: <strong><%= recipe.cook_time %></strong><br><br>
-<% ingredient_list(recipe).each do |ing| %>
-<%= ing %><br>
+Prep Time: <strong id="prep-time"><%= recipe.prep_time %></strong>
+Cook Time: <strong id="cook-time"><%= recipe.cook_time %></strong><br><br>
+<ul><% ingredient_list(recipe).each do |ing| %>
+<li><%= ing %><br>
 <% end %><br><br>
-<%=recipe.instructions%>
+</ul>
+<div id="instructions"><%=recipe.instructions%></div>
