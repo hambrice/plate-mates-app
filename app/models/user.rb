@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :created_recipes, class_name: "Recipe"
   has_many :likes
   has_many :liked_recipes, through: :likes, source: :recipe
+  has_many :comments
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
   def self.from_omniauth(auth)

@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
+  has_many :comments
   validates :name, presence: true
   validates :instructions, presence: true
   validates :category, presence: true

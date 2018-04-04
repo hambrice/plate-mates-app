@@ -8,6 +8,13 @@
 <%= link_to "Delete recipe", "/recipes/#{@recipe.id}", method: "delete" %>
 <% end %>
 <%= render partial: '/comments/comment_form' %>
+<%= render @comments %>
 <script type="text/javascript" charset="utf-8">
-
+  $(function() {
+    $('form').submit(function(e) {
+      e.preventDefault();
+      let data = $(this).serialize();
+      let posting = $.post('/comments', data)
+    })
+  })
 </script>
