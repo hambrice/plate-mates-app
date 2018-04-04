@@ -3,14 +3,14 @@
   <% if current_user.liked_recipes.include?(recipe) %>
     <%= link_to "Remove this recipe from saved list", recipe_like_path(recipe), method: "delete" %><br><br>
   <% else %>
-    <%= link_to "Save this recipe", recipe_likes_path(recipe), method: "post"%><br><br>
+    <%= link_to "Save this recipe", recipe_likes_path(recipe), method: "post", class: "js-like"%><br><br>
   <% end %>
 <% end %>
 <img src="<%= recipe.image %>"><br><br>
 Prep Time: <strong id="prep-time"><%= recipe.prep_time %></strong>
 Cook Time: <strong id="cook-time"><%= recipe.cook_time %></strong><br><br>
-<ul><% ingredient_list(recipe).each do |ing| %>
+<div id="ingredients"><ul><% ingredient_list(recipe).each do |ing| %>
 <li><%= ing %><br>
-<% end %><br><br>
-</ul>
+<% end %>
+</ul></div>
 <div id="instructions"><%=recipe.instructions%></div>

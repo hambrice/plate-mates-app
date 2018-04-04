@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'home', to: 'site#home', as: 'home'
   root 'site#index'
   #get 'profiles/:id', to: 'site#show', as: 'user'
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, path: 'u'
   resources :users do
     resources :recipes, only: [:index, :show]
   end
