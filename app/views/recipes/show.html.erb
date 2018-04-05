@@ -12,20 +12,5 @@
 <%= render @comments %>
 </div>
 <script type="text/javascript" charset="utf-8">
-  $(function() {
-    $('form').submit(function(e) {
-      e.preventDefault();
-      let data = $(this).serialize();
-      //debugger;
-      let posting = $.post(this.action, data)
-      //debugger;
-      posting.done(function(data) {
-        debugger;
-        let name = data.user.first_name + " " + data.user.last_name
-        $("#comments").prepend(`${data.created_at}`)
-        $("#comments").prepend(`<p>${data.text}</p>`)
-        $("#comments").prepend(`<h3>${name}</h3>`)
-      })
-    })
-  })
+
 </script>

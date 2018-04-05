@@ -66,4 +66,5 @@ function replaceRecipe(recipe) {
   $('#ingredients').html('<ul></ul>')
   recipe.ingredientsList().forEach(ingredient =>
     $('ul').append(`<li>${ingredient}`) )
+
 }

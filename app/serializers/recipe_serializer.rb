@@ -3,5 +3,5 @@ class RecipeSerializer < ActiveModel::Serializer
   has_many :recipe_ingredients, through: :ingredients
   has_many :ingredients
   has_many :comments
-  belongs_to :user
+  belongs_to :user, serializer: UserSerializer
 end
