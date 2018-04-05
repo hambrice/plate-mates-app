@@ -1,10 +1,14 @@
 class CommentsController < ApplicationController
   def create
-    @comment = @post.comments.build(comments_params)
+    #binding.pry
+    @recipe = Recipe.find(params[:recipe_id])
+    @comment = @recipe.comments.create(comments_params)
+    #binding.pry
+    render json: @comment
   end
 
   private
   def comments_params
-    require(:comment).permit(:text)
+    params.require(:comment).permit(:text, :user_id)
   end
 end
