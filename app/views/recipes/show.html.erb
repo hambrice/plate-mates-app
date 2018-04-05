@@ -8,7 +8,9 @@
 <%= link_to "Delete recipe", "/recipes/#{@recipe.id}", method: "delete" %>
 <% end %>
 <%= render partial: '/comments/comment_form' %>
+<div id="comments">
 <%= render @comments %>
+</div>
 <script type="text/javascript" charset="utf-8">
   $(function() {
     $('form').submit(function(e) {
@@ -16,8 +18,13 @@
       let data = $(this).serialize();
       //debugger;
       let posting = $.post(this.action, data)
+      //debugger;
       posting.done(function(data) {
         debugger;
+        let name = data.user.first_name + " " + data.user.last_name
+        $("#comments").prepend(`${data.created_at}`)
+        $("#comments").prepend(`<p>${data.text}</p>`)
+        $("#comments").prepend(`<h3>${name}</h3>`)
       })
     })
   })

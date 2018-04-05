@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     #binding.pry
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.create(comments_params)
-    #binding.pry
     render json: @comment
   end
 

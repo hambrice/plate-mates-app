@@ -17,6 +17,7 @@ class Recipe {
         return array
 
     }
+    this.comments = recipe.comments
   }
 }
 // class Ingredient {
@@ -43,6 +44,11 @@ $(function () {
 function nextRecipe(element) {
   let nextId = parseInt($(element).attr("data-id")) + 1
   $.getJSON(`/recipes/${nextId}`, function(rec) {
+    //debugger;
+    // var start = rec.search("<body>") + 7
+    // var end = rec.search("</body>")
+    // var code = rec.slice(start, end)
+    // $("body").html(code)
     recipe = new Recipe(rec);
     replaceRecipe(recipe);
   })

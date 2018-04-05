@@ -15,4 +15,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require recipes
+//= require comments
 //= require_tree .

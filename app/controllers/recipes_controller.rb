@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @comment = Comment.new
-    @comments = @recipe.comments
+    @comments = @recipe.comments.order! 'created_at DESC'
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @recipe }
