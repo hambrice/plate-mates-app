@@ -41,6 +41,12 @@ $(function () {
     e.preventDefault();
     nextRecipe(this);
   })
+  $("#categories").submit(function(e) {
+    e.preventDefault();
+    debugger;
+    this.querySelectorAll("input:checked")
+    //limitCategories();
+  })
 })
 function nextRecipe(element) {
   let nextId = parseInt($(element).attr("data-id")) + 1
@@ -74,4 +80,8 @@ function addComment(comment, element) {
   element.prepend(comment.created_at)
   element.prepend(`<p>${comment.text}</p>`)
   element.prepend(`<h3>${name}</h3>`)
+}
+
+function limitCategories() {
+  debugger;
 }
