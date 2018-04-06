@@ -7,6 +7,7 @@ class Recipe {
     this.instructions = recipe.instructions
     this.ingredients = recipe.ingredients
     this.recipeIngredients = recipe.recipe_ingredients
+    this.comments = recipe.comments
     this.user = {id: recipe.user.id, name: recipe.user.first_name + " " + recipe.user.last_name}
     this.ingredientsList = function() {
       let array = [];
@@ -44,12 +45,8 @@ $(function () {
 function nextRecipe(element) {
   let nextId = parseInt($(element).attr("data-id")) + 1
   $.getJSON(`/recipes/${nextId}`, function(rec) {
-    //debugger;
-    // var start = rec.search("<body>") + 7
-    // var end = rec.search("</body>")
-    // var code = rec.slice(start, end)
-    // $("body").html(code)
     recipe = new Recipe(rec);
+    //debugger;
     replaceRecipe(recipe);
   })
   $('.js-next').attr('data-id', nextId)
@@ -66,5 +63,15 @@ function replaceRecipe(recipe) {
   $('#ingredients').html('<ul></ul>')
   recipe.ingredientsList().forEach(ingredient =>
     $('ul').append(`<li>${ingredient}`) )
-
+    const commentsDiv = $("#comments")
+  commentsDiv.html("")
+  recipe.comments.forEach(comment =>
+    addComment(comment, commentsDiv) )
+}
+function addComment(comment, element) {
+  //debugger;
+  let name = comment.user.first_name + " " + comment.user.last_name
+  element.prepend(comment.created_at)
+  element.prepend(`<p>${comment.text}</p>`)
+  element.prepend(`<h3>${name}</h3>`)
 }

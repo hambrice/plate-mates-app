@@ -4,6 +4,11 @@
     <%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
-
+<%= form_tag "#", :id => "categories" do %>
+  <% Recipe.category_list.each do |category| %>
+    <%= check_box_tag category %> <%=category%>
+  <% end %>
+  <%= submit_tag "Categories", id: "category_submit"  %>
+<% end %>
 
 <%= render partial: 'recipe_summary', collection: @recipes, as: :recipe %>
