@@ -1,6 +1,8 @@
 <h2><%=@recipe.name %> </h2>
 <h3>Created by: <%=link_to @recipe.user.name, user_recipes_path(@recipe.user)%> </h3>
-<a href="#" class="js-next" data-id="<%=@recipe.id%>">Next...</a> <br>
+<% if params[:user_id] %>
+  <a href="#" class="js-next" data-id="<%=@recipe.id%>">Next Recipe From This User</a> <br>
+<% end %>
 <%= render partial: 'recipe_details', locals: {recipe: @recipe} %><br><br>
 
 <% if policy(@recipe).update? %>

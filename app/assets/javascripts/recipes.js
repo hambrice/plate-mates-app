@@ -43,8 +43,8 @@ $(function () {
   })
   $("#categories").submit(function(e) {
     e.preventDefault();
-    debugger;
     this.querySelectorAll("input:checked")
+    debugger;
     //limitCategories();
   })
 })

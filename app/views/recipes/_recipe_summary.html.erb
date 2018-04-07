@@ -1,6 +1,10 @@
 <div class= "card"><img src="<%= recipe.image %>" style="width:100%">
 <div class="container">
-<h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+  <% if params[:user_id] %>
+    <h4><%= link_to recipe.name, user_recipe_path(recipe.user, recipe) %></h4>
+  <% else %>
+    <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+<% end %>
 Prep time: <%= recipe.prep_time %> Cook time: <%=recipe.cook_time %>
 </div>
 </div>
