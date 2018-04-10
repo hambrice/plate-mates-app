@@ -1,5 +1,7 @@
 {
   "name": "plate-mates-app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "handlebars": "^4.0.11"
+  }
 }

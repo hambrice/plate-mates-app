@@ -1,5 +1,6 @@
 class Recipe {
   constructor(recipe) {
+    this.id = recipe.id
     this.name = recipe.name
     this.prepTime = recipe.prep_time
     this.cookTime = recipe.cook_time
@@ -43,8 +44,24 @@ $(function () {
   })
   $("#categories").submit(function(e) {
     e.preventDefault();
-    this.querySelectorAll("input:checked")
-    debugger;
+    let inputNodes = this.querySelectorAll("input:checked")
+    let inputsArray = []
+    inputNodes.forEach(input =>
+    inputsArray.push(input.name))
+    $.get(`/categories/${inputsArray.join("&")}`, function(data){
+      $(".card").remove()
+      var template = Handlebars.compile(document.getElementById("recipes-template").innerHTML);
+      var result = template(data)
+      document.querySelector("wrapper").innerHTML += result;
+      debugger;
+      // for (i = 0; i <data.length; i++){
+      //   let recipe = new Recipe(data[i])
+      //   cards[i].childNodes[0].src = recipe.image
+        //create a function that holds the string of html and inserts each thing needed; have that function append each card
+      //}
+      //debugger;
+
+    })
     //limitCategories();
   })
 })
@@ -52,7 +69,6 @@ function nextRecipe(element) {
   let nextId = parseInt($(element).attr("data-id")) + 1
   $.getJSON(`/recipes/${nextId}`, function(rec) {
     recipe = new Recipe(rec);
-    //debugger;
     replaceRecipe(recipe);
   })
   $('.js-next').attr('data-id', nextId)

@@ -1,5 +1,5 @@
 $(function() {
-  $('form').submit(function(e) {
+  $('form#new_comment').submit(function(e) {
     e.preventDefault();
     let data = $(this).serialize();
     //debugger;

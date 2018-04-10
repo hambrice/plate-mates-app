@@ -16,4 +16,5 @@
 //= require jquery_ujs
 //= require recipes
 //= require comments
+//= require handlebars
 //= require_tree .
