@@ -14,10 +14,10 @@
 <%= render partial: 'recipe_summary', collection: @recipes, as: :recipe %>
 </wrapper>
 <script id="recipes-template" type="text/x-handlebars-template">
-  {{#each this}}
+  {{#each this.recipes}}
   <div class= "card"><img src="{{image}}" style="width:100%">
     <div class="container">
-      <h4><a href="/recipes/{{id}}"> {{name}}</a></h4>
+      <h4><a href="{{../path}}/{{id}}"> {{name}}</a></h4>
       <div>Prep Time:{{prep_time}} Cook Time:{{cook_time}}</div>
     </div>
   </div>

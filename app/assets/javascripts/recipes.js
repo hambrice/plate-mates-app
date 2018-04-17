@@ -44,25 +44,7 @@ $(function () {
   })
   $("#categories").submit(function(e) {
     e.preventDefault();
-    let inputNodes = this.querySelectorAll("input:checked")
-    let inputsArray = []
-    inputNodes.forEach(input =>
-    inputsArray.push(input.name))
-    $.get(`/categories/${inputsArray.join("&")}`, function(data){
-      $(".card").remove()
-      var template = Handlebars.compile(document.getElementById("recipes-template").innerHTML);
-      var result = template(data)
-      document.querySelector("wrapper").innerHTML += result;
-      debugger;
-      // for (i = 0; i <data.length; i++){
-      //   let recipe = new Recipe(data[i])
-      //   cards[i].childNodes[0].src = recipe.image
-        //create a function that holds the string of html and inserts each thing needed; have that function append each card
-      //}
-      //debugger;
-
-    })
-    //limitCategories();
+    limitCategories(this);
   })
 })
 function nextRecipe(element) {
@@ -98,6 +80,23 @@ function addComment(comment, element) {
   element.prepend(`<h3>${name}</h3>`)
 }
 
-function limitCategories() {
-  debugger;
+function limitCategories(element) {
+  //debugger;
+  let inputNodes = element.querySelectorAll("input:checked")
+  let inputsArray = []
+  inputNodes.forEach(input =>
+  inputsArray.push(input.name))
+  $.get(`/categories/${inputsArray.join("&")}`, function(recipes){
+    $(".card").remove()
+    data = []
+    data.path = window.location.pathname
+    data.recipes = recipes
+    //debugger;
+    var template = Handlebars.compile(document.getElementById("recipes-template").innerHTML);
+    var result = template(data)
+    //debugger;
+
+    document.querySelector("wrapper").innerHTML += result;
+    $("#category_submit").prop("disabled",false)
+  })
 }
