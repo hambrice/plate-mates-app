@@ -42,7 +42,7 @@ $(function () {
     e.preventDefault();
     nextRecipe(this);
   })
-  $("#categories").submit(function(e) {
+  $("#search").submit(function(e) {
     e.preventDefault();
     limitCategories(this);
   })
@@ -81,12 +81,14 @@ function addComment(comment, element) {
 }
 
 function limitCategories(element) {
-  //debugger;
-  let inputNodes = element.querySelectorAll("input:checked")
-  let inputsArray = []
-  inputNodes.forEach(input =>
-  inputsArray.push(input.name))
-  $.get(`/categories/${inputsArray.join("&")}`, function(recipes){
+  let object = {}
+  let categoryNodes = element.querySelectorAll("input:checked")
+  let categoryArray = []
+  categoryNodes.forEach(input =>
+  categoryArray.push(input.name))
+  object = {query: element.querySelector("#query").value, categories: categoryArray, sort: element.querySelector("#sort").value}
+  let searchParams = JSON.stringify(object)
+  $.get(`/search/${searchParams}`, function(recipes){
     $(".card").remove()
     data = []
     data.path = window.location.pathname

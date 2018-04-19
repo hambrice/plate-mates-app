@@ -1,14 +1,11 @@
-<%= form_tag recipes_path, method: :get do %>
-  <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", name: nil %>
-  </p>
-<% end %>
-<%= form_tag "#", :id => "categories" do %>
-  <% Recipe.category_list.each do |category| %>
+<h4>Filter Recipes </h4>
+<%= form_tag "#", :id => "search", authenticity_token: false do %>
+Title:<%= text_field_tag :query, params[:query] %><br><br>
+  Categories:<% Recipe.category_list.each do |category| %>
     <%= check_box_tag category %> <%=category%>
-  <% end %>
-  <%= submit_tag "Categories", id: "category_submit"  %>
+  <% end %><br><br>
+  <%= select_tag :sort, options_for_select(sort_by)%>
+  <%= submit_tag "Search", id: "category_submit"%><br><br>
 <% end %>
 <wrapper>
 <%= render partial: 'recipe_summary', collection: @recipes, as: :recipe %>
