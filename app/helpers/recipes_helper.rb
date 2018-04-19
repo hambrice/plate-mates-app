@@ -4,4 +4,6 @@ module RecipesHelper
       ing.quantity + " " + ing.ingredient.name
     end
   end
+
+
 end

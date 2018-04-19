@@ -57,4 +57,30 @@ class Recipe < ApplicationRecord
     ["Cake","Frozen", "Cookie", "Pie", "Candy", "Pastry", "Other"]
   end
 
+  def self.sort_results(sort_method, recipes)
+    case sort_method
+    when "Most Comments"
+      recipes = recipes.sort_by{|a| a.comments.length}.reverse!
+    when "Newest"
+      recipes = recipes.sort_by{|a| a.created_at}.reverse!
+    when "Oldest"
+      recipes = recipes.sort_by{|a| a.created_at}
+    when "Most Likes"
+      recipes = recipes.sort_by{|a| a.likes.length}.reverse!
+    end
+    recipes
+  end
+  def self.search_results(search_params)
+    if !search_params["categories"].empty?
+      @recipes = self.none
+      search_params["categories"].each do |category|
+        @recipes += self.where(category: category.capitalize)
+      end
+    else
+      @recipes = self.all
+    end
+      @recipes = self.search(@recipes, search_params["query"])
+      @recipes = self.sort_results(search_params["sort"], @recipes)
+      @recipes
+  end
 end
