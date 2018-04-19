@@ -67,5 +67,7 @@ class User < ApplicationRecord
         user.created_recipes
       end
     end
-
+    def recipe_ids
+      self.created_recipes.collect {|r| r.id}
+    end
 end

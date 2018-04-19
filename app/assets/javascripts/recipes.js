@@ -9,10 +9,9 @@ class Recipe {
     this.ingredients = recipe.ingredients
     this.recipeIngredients = recipe.recipe_ingredients
     this.comments = recipe.comments
-    this.user = {id: recipe.user.id, name: recipe.user.first_name + " " + recipe.user.last_name}
+    this.user = {id: recipe.user.id, name: recipe.user.first_name + " " + recipe.user.last_name, recipeIds: recipe.user.recipe_ids}
     this.ingredientsList = function() {
       let array = [];
-      //let recipeIngredients = th
         for(let i = 0; i < this.ingredients.length; i++) {
           array.push(this.recipeIngredients[i].quantity + " " + this.ingredients[i].name)
         }
@@ -22,21 +21,7 @@ class Recipe {
     this.comments = recipe.comments
   }
 }
-// class Ingredient {
-//   constructor(ingredient) {
-//     //debugger;
-//     this.id = ingredient.id
-//     this.name = ingredient.name
-//     store.ingredients.push(this)
-//   }
-// }
-// class RecipeIngredient {
-//   constructor(quantity, recipe, ingredient) {
-//     this.quantity = quantity
-//     this.recipeId = recipe.id
-//     this.ingredientId = ingredient.id
-//   }
-// }
+
 $(function () {
   $(".js-next").on('click', function(e) {
     e.preventDefault();
@@ -48,13 +33,19 @@ $(function () {
   })
 })
 function nextRecipe(element) {
-  let nextId = parseInt($(element).attr("data-id")) + 1
-  $.getJSON(`/recipes/${nextId}`, function(rec) {
-    recipe = new Recipe(rec);
-    replaceRecipe(recipe);
+  let currentId = parseInt($(element).attr("data-id"))
+  let nextId
+  $.getJSON(`/recipes/${currentId}`, function(data) {
+    currentRecipe = new Recipe(data);
+    nextId = nextRecipeId(currentRecipe.user.recipeIds, currentRecipe.id)
+    $.getJSON(`/recipes/${nextId}`, function(rec) {
+      recipe = new Recipe(rec);
+      replaceRecipe(recipe);
+    })
+    $('.js-next').attr('data-id', nextId)
+    $('.js-like').attr('href', `/recipes/${nextId}/likes`)
+
   })
-  $('.js-next').attr('data-id', nextId)
-  $('.js-like').attr('href', `/recipes/${nextId}/likes`)
 }
 function replaceRecipe(recipe) {
   $('h2').text(recipe.name)
@@ -101,4 +92,16 @@ function limitCategories(element) {
     document.querySelector("wrapper").innerHTML += result;
     $("#category_submit").prop("disabled",false)
   })
+}
+
+function nextRecipeId(array, currentId) {
+  for(let i=0; i<array.length; i++) {
+    if (array[i] == currentId) {
+       if (i + 1 == array.length) {
+         return array[0]
+       } else {
+         return array[i + 1]
+       }
+    }
+  }
 }
