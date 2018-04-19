@@ -2,9 +2,14 @@ class SearchController < ApplicationController
   def show
     search = JSON.parse(params[:id])
     #categories = cat.split("&")
-    @recipes = Recipe.none
-    search["categories"].each do |category|
-      @recipes += Recipe.where(category: category.capitalize)
+    binding.pry
+    if !search["categories"].empty?
+      @recipes = Recipe.none
+      search["categories"].each do |category|
+        @recipes += Recipe.where(category: category.capitalize)
+      end
+    else
+      @recipes = Recipe.all
     end
       @recipes = Recipe.search(@recipes, search["query"])
     case search["sort"]
