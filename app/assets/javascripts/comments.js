@@ -10,7 +10,10 @@ $(function() {
       $("#comments").prepend(`${data.created_at}`)
       $("#comments").prepend(`<p>${data.text}</p>`)
       $("#comments").prepend(`<h3>${name}</h3>`)
+      $("#comment_submit").prop("disabled",false)
+
     })
     $("#comment_text").val("")
+
   })
 })
