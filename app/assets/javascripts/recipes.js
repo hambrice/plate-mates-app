@@ -84,11 +84,8 @@ function limitCategories(element) {
     data = []
     data.path = window.location.pathname
     data.recipes = recipes
-    //debugger;
     var template = Handlebars.compile(document.getElementById("recipes-template").innerHTML);
     var result = template(data)
-    //debugger;
-
     document.querySelector("wrapper").innerHTML += result;
     $("#category_submit").prop("disabled",false)
   })
