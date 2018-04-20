@@ -64,7 +64,6 @@ function replaceRecipe(recipe) {
     addComment(comment, commentsDiv) )
 }
 function addComment(comment, element) {
-  //debugger;
   let name = comment.user.first_name + " " + comment.user.last_name
   element.prepend(comment.created_at)
   element.prepend(`<p>${comment.text}</p>`)

@@ -17,4 +17,5 @@
 //= require recipes
 //= require comments
 //= require handlebars
+//= require moment
 //= require_tree .
