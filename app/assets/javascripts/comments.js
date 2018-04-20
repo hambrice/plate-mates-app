@@ -2,6 +2,7 @@ $(function() {
   $('form#new_comment').submit(function(e) {
     e.preventDefault();
     postComment(this);
+  })
 })
 
 function postComment(element) {
@@ -10,7 +11,7 @@ function postComment(element) {
   posting.done(function(data) {
     let name = data.user.first_name + " " + data.user.last_name
     debugger;
-    $("#comments").prepend(`${data.created_at}`)
+    $("#comments").prepend(`${moment(data.created_at).format('MM/DD/YYYY h:mma')}`)
     $("#comments").prepend(`<p>${data.text}</p>`)
     $("#comments").prepend(`<h3>${name}</h3>`)
     $("#comment_submit").prop("disabled",false)
@@ -18,5 +19,4 @@ function postComment(element) {
   })
   $("#comment_text").val("")
 
-})
 }
