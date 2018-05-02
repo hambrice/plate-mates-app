@@ -10,19 +10,31 @@ class Recipe {
     this.recipeIngredients = recipe.recipe_ingredients
     this.comments = recipe.comments
     this.user = {id: recipe.user.id, name: recipe.user.first_name + " " + recipe.user.last_name, recipeIds: recipe.user.recipe_ids}
-    this.ingredientsList = function() {
-      let array = [];
-        for(let i = 0; i < this.ingredients.length; i++) {
-          array.push(this.recipeIngredients[i].quantity + " " + this.ingredients[i].name)
-        }
-        return array
-
-    }
+    // this.ingredientsList = function() {
+    //   let array = [];
+    //     for(let i = 0; i < this.ingredients.length; i++) {
+    //       array.push(this.recipeIngredients[i].quantity + " " + this.ingredients[i].name)
+    //     }
+    //     return array
+    //
+    // }
     this.comments = recipe.comments
   }
 }
+Recipe.prototype.ingredientsList = function() {
+  let array = [];
+    for(let i = 0; i < this.ingredients.length; i++) {
+      array.push(this.recipeIngredients[i].quantity + " " + this.ingredients[i].name)
+    }
+    return array
 
-$(function () {
+}
+
+$(document).on('turbolinks:load', function () {
+  bindActions()
+})
+
+function bindActions() {
   $(".js-next").on('click', function(e) {
     e.preventDefault();
     nextRecipe(this);
@@ -31,7 +43,7 @@ $(function () {
     e.preventDefault();
     limitCategories(this);
   })
-})
+}
 function nextRecipe(element) {
   let currentId = parseInt($(element).attr("data-id"))
   let nextId
