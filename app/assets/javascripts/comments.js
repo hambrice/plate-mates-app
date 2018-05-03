@@ -6,11 +6,10 @@ $(function() {
 })
 
 function postComment(element) {
-  let data = $(element).serialize();
-  let posting = $.post(element.action, data)
+  const data = $(element).serialize();
+  const posting = $.post(element.action, data)
   posting.done(function(data) {
-    let name = data.user.first_name + " " + data.user.last_name
-    debugger;
+    const name = data.user.first_name + " " + data.user.last_name
     $("#comments").prepend(`${moment(data.created_at).format('MM/DD/YYYY h:mma')}`)
     $("#comments").prepend(`<p>${data.text}</p>`)
     $("#comments").prepend(`<h3>${name}</h3>`)

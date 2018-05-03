@@ -10,15 +10,6 @@ class Recipe {
     this.recipeIngredients = recipe.recipe_ingredients
     this.comments = recipe.comments
     this.user = {id: recipe.user.id, name: recipe.user.first_name + " " + recipe.user.last_name, recipeIds: recipe.user.recipe_ids}
-    // this.ingredientsList = function() {
-    //   let array = [];
-    //     for(let i = 0; i < this.ingredients.length; i++) {
-    //       array.push(this.recipeIngredients[i].quantity + " " + this.ingredients[i].name)
-    //     }
-    //     return array
-    //
-    // }
-    this.comments = recipe.comments
   }
 }
 Recipe.prototype.ingredientsList = function() {
@@ -29,6 +20,12 @@ Recipe.prototype.ingredientsList = function() {
     return array
 
 }
+//important thing about hoisting is that javascript is handling two separate processes: first, the process of handling declarations(var x), then it's handling the assignments(x=2). Important to realize that var x = 2 represents two different things conceptually to javascript, which is what allows for functions to be called before they are declared. The important aspect to remember about this is that hoisting only happens within it's scope, which means that this two-step process is completed once for each scope level (so var x, then x=2, then function() var y, y=3)
+// class Comment {
+//   constructor(comment) {
+//     this.text = comment.text
+//   }
+// }
 
 $(document).on('turbolinks:load', function () {
   bindActions()
@@ -45,13 +42,12 @@ function bindActions() {
   })
 }
 function nextRecipe(element) {
-  let currentId = parseInt($(element).attr("data-id"))
-  let nextId
+  const currentId = parseInt($(element).attr("data-id"))
   $.getJSON(`/recipes/${currentId}`, function(data) {
-    currentRecipe = new Recipe(data);
-    nextId = nextRecipeId(currentRecipe.user.recipeIds, currentRecipe.id)
+    const currentRecipe = new Recipe(data);
+    const nextId = nextRecipeId(currentRecipe.user.recipeIds, currentRecipe.id)
     $.getJSON(`/recipes/${nextId}`, function(rec) {
-      recipe = new Recipe(rec);
+      const recipe = new Recipe(rec);
       replaceRecipe(recipe);
     })
     $('.js-next').attr('data-id', nextId)
@@ -76,27 +72,26 @@ function replaceRecipe(recipe) {
     addComment(comment, commentsDiv) )
 }
 function addComment(comment, element) {
-  let name = comment.user.first_name + " " + comment.user.last_name
-  element.prepend(comment.created_at)
-  element.prepend(`<p>${comment.text}</p>`)
-  element.prepend(`<h3>${name}</h3>`)
+    const name = comment.user.first_name + " " + comment.user.last_name
+    element.prepend(comment.created_at)
+    element.prepend(`<p>${comment.text}</p>`)
+    element.prepend(`<h3>${name}</h3>`)
 }
 
 function limitCategories(element) {
-  let object = {}
-  let categoryNodes = element.querySelectorAll("input:checked")
+  const categoryNodes = element.querySelectorAll("input:checked")
   let categoryArray = []
   categoryNodes.forEach(input =>
   categoryArray.push(input.name))
-  object = {query: element.querySelector("#query").value, categories: categoryArray, sort: element.querySelector("#sort").value}
-  let searchParams = JSON.stringify(object)
+  const object = {query: element.querySelector("#query").value, categories: categoryArray, sort: element.querySelector("#sort").value}
+  const searchParams = JSON.stringify(object)
   $.get(`/search/${searchParams}`, function(recipes){
     $(".card").remove()
-    data = []
+    let data = []
     data.path = window.location.pathname
     data.recipes = recipes
-    var template = Handlebars.compile(document.getElementById("recipes-template").innerHTML);
-    var result = template(data)
+    const template = Handlebars.compile(document.getElementById("recipes-template").innerHTML);
+    const result = template(data)
     document.querySelector("wrapper").innerHTML += result;
     $("#category_submit").prop("disabled",false)
   })
