@@ -20,12 +20,16 @@ Recipe.prototype.ingredientsList = function() {
     return array
 
 }
-//important thing about hoisting is that javascript is handling two separate processes: first, the process of handling declarations(var x), then it's handling the assignments(x=2). Important to realize that var x = 2 represents two different things conceptually to javascript, which is what allows for functions to be called before they are declared. The important aspect to remember about this is that hoisting only happens within it's scope, which means that this two-step process is completed once for each scope level (so var x, then x=2, then function() var y, y=3)
-// class Comment {
-//   constructor(comment) {
-//     this.text = comment.text
-//   }
-// }
+class Comment {
+  constructor(comment) {
+    this.text = comment.text
+    this.createdAt = comment.created_at
+    this.user = comment.user
+  }
+}
+Comment.prototype.userName = function() {
+    return this.user.first_name + " " + this.user.last_name
+}
 
 $(document).on('turbolinks:load', function () {
   bindActions()
@@ -71,11 +75,11 @@ function replaceRecipe(recipe) {
   recipe.comments.forEach(comment =>
     addComment(comment, commentsDiv) )
 }
-function addComment(comment, element) {
-    const name = comment.user.first_name + " " + comment.user.last_name
+function addComment(comm, element) {
+    const comment = new Comment(comm)
     element.prepend(comment.created_at)
     element.prepend(`<p>${comment.text}</p>`)
-    element.prepend(`<h3>${name}</h3>`)
+    element.prepend(`<h3>${comment.userName()}</h3>`)
 }
 
 function limitCategories(element) {
